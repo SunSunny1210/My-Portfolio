@@ -18,7 +18,7 @@
                 </div>
                 <div class="hability-cell flex-center-column" id="languages">
                     <h3>Languages</h3>
-                    <ul>
+                    <ul class="flex-center-column">
                         <li class="flex-center-column">
                             <label for="english">English</label>
                             <progress id="english" value="100"></progress>
@@ -71,7 +71,7 @@
 
         .habilities-grid {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;
             grid-template-areas: 
             "skills languages"
@@ -96,12 +96,25 @@
 
                     li {
                         padding: 1rem;
+                        gap: 0.5rem;
                         color: white;
                         background-color: var(--dark-pink);
                         border: 1rem double var(--main-pink);
 
+                        progress {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            height: 1rem;
+                        }
+
+                        progress::-webkit-progress-bar {
+                            background-color: white;
+                            border-radius: 20px;
+                        }
+                        
                         progress::-webkit-progress-value {
                             background-color: var(--peach);
+                            border-radius: 20px;
                         }
                     }
                 }
