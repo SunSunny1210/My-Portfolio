@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-    <div class="education flex-center-column">
-        <h2>Education</h2>
+    <div class="education beige-main flex-center-column">
+        <h2 class="beige-title">Education</h2>
         <div class="education-info flex-center-column">
             <ul class="info flex-center-column">
                 <li>Yiyiyiyi</li>
@@ -15,22 +15,6 @@
 
 <style scoped>
 .education {
-    padding: 2rem;
-    height: 100%;
-    width: 70%;
-    background-color: var(--beige);
-    z-index: 1;
-
-    h2 {
-        font-size: 4rem;
-        font-style: oblique;
-        letter-spacing: 1rem;
-        color: white;
-        text-decoration: underline double 3px;
-        text-shadow: 5px 5px var(--peach);
-        text-underline-offset: 1rem;
-    }
-
     .education-info {
         width: 100%;
         flex: 1;

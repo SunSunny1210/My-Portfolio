@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-    <div class="habilities flex-center-column">
-        <h2>Habilities</h2>
+    <div class="habilities pink-main flex-center-column">
+        <h2 class="pink-title">Habilities</h2>
         <div class="habilities-info flex-center">
             <div class="habilities-grid">
                 <div class="hability-cell flex-center-column" id="skills">
@@ -49,22 +49,6 @@
 
 <style scoped>
 .habilities {
-    padding: 2rem;
-    height: 100%;
-    width: 70%;
-    background-color: var(--soft-pink);
-    z-index: 1;
-
-    h2 {
-        font-size: 4rem;
-        font-style: oblique;
-        letter-spacing: 1rem;
-        color: white;
-        text-decoration: underline double 3px;
-        text-shadow: 5px 5px var(--main-pink);
-        text-underline-offset: 1rem;
-    }
-
     .habilities-info {
         padding-top: 3rem;
         flex: 1;
@@ -139,7 +123,6 @@
 
                     img {
                         width: 5vw;
-                        aspect-ratio: 1;
                     }
                 }
             }

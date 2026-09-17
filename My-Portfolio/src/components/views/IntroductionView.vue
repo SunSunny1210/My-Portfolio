@@ -2,8 +2,8 @@
 </script>
 
 <template>
-    <div class="introduction flex-center-column">
-        <h2>Introduction</h2>
+    <div class="introduction beige-main flex-center-column">
+        <h2 class="beige-title">Introduction</h2>
         <div class="info flex-center">
             <div class="info-content flex-center">
                 <div class="img-back">
@@ -17,22 +17,6 @@
 
 <style scoped>
 .introduction {
-    padding: 2rem;
-    height: 100%;
-    width: 70%;
-    background-color: var(--beige);
-    z-index: 1;
-    
-    h2 {
-        font-size: 4rem;
-        font-style: oblique;
-        letter-spacing: 1rem;
-        color: white;
-        text-decoration: underline double 3px;
-        text-shadow: 5px 5px var(--peach);
-        text-underline-offset: 1rem;
-    }
-    
     .info {
         flex: 1;
         
@@ -49,7 +33,6 @@
                 
                 img {
                     width: 100%;
-                    aspect-ratio: 1;
                 }
             }
             

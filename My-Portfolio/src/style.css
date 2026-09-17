@@ -25,6 +25,23 @@ h1 {
   font-size: 7rem;
 }
 
+h2 {
+  font-size: 4rem;
+  font-style: oblique;
+  letter-spacing: 1rem;
+  color: white;
+  text-decoration: underline double 3px;
+  text-underline-offset: 1rem;
+}
+
+.pink-title {
+  text-shadow: 5px 5px var(--main-pink);
+}
+
+.beige-title {
+  text-shadow: 5px 5px var(--peach);
+}
+
 p {
   color: white;
   font-size: clamp(1rem, 3vw, 2rem);
@@ -32,6 +49,25 @@ p {
 
 li {
   font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+img {
+  aspect-ratio: 1;
+}
+
+.pink-main, .beige-main {
+  padding: 2rem;
+  height: 100%;
+  width: 70%;
+  z-index: 1;
+}
+
+.pink-main {
+  background-color: var(--soft-pink);
+}
+
+.beige-main {
+  background-color: var(--beige);
 }
 
 .flex-center-column {

@@ -24,8 +24,8 @@ const left = ref(false);
 </script>
 
 <template>
-    <div class="contact flex-center-column">
-        <h2>Contact</h2>
+    <div class="contact beige-main flex-center-column">
+        <h2 class="beige-title">Contact</h2>
         <div class="contact-info flex-center">
             <div @click="left = true" class="links flex-center-column" :class="{ left: left }">
                 <div v-for="link in links" class="link flex-center">
@@ -41,22 +41,6 @@ const left = ref(false);
 
 <style scoped>
 .contact {
-    padding: 2rem;
-    height: 100%;
-    width: 70%;
-    background-color: var(--beige);
-    z-index: 1;
-
-    h2 {
-        font-size: 4rem;
-        font-style: oblique;
-        letter-spacing: 1rem;
-        color: white;
-        text-decoration: underline double 3px;
-        text-shadow: 5px 5px var(--peach);
-        text-underline-offset: 1rem;
-    }
-
     .contact-info {
         width: 100%;
         flex: 1;
@@ -78,13 +62,20 @@ const left = ref(false);
                 
                 .img-back {
                     padding: 1rem;
-                    background-color: white;
+                    background: radial-gradient(
+                        circle,
+                        white 0 60%,
+                        var(--beige) 60% 65%,
+                        white 65% 70%,
+                        var(--beige) 70% 75%,
+                        white 75% 80%,
+                        var(--beige) 80% 100%
+                    );
                     border-radius: 50%;
                     z-index: 1;
 
                     img {
                         width: 5vw;
-                        aspect-ratio: 1;
                     }
                 }
                 

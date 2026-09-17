@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-    <div class="about-me flex-center-column">
-        <h2>About Me</h2>
+    <div class="about-me pink-main flex-center-column">
+        <h2 class="pink-title">About Me</h2>
         <div class="about-info flex-center">
             <div class="info">
                 <p>
@@ -17,22 +17,6 @@
 
 <style scoped>
 .about-me {
-    padding: 2rem;
-    height: 100%;
-    width: 70%;
-    background-color: var(--soft-pink);
-    z-index: 1;
-    
-    h2 {
-        font-size: 4rem;
-        font-style: oblique;
-        letter-spacing: 1rem;
-        color: white;
-        text-decoration: underline double 3px;
-        text-shadow: 5px 5px var(--main-pink);
-        text-underline-offset: 1rem;
-    }
-    
     .about-info {
         flex: 1;
         
@@ -43,7 +27,6 @@
 
             img {
                 width: 9vw;
-                aspect-ratio: 1;
                 vertical-align: middle;
 
                 &.controller {
