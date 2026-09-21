@@ -6,7 +6,7 @@ import Options from '../Options.vue';
     <div class="main-view">
         <Options/>
         <RouterView v-slot="{ Component }">
-            <Transition name="" mode="out-in">
+            <Transition name="bounce-in" mode="in-out">
                 <component :is="Component"/>
             </Transition>
         </RouterView>
@@ -22,16 +22,27 @@ import Options from '../Options.vue';
     align-self: center;
 }
 
-.slide-in-enter-active,
-.slide-in-leave-active {
-  transition: all 0.4s ease-in-out;
+.bounce-in-enter-active {
+    position: absolute;
+    animation: bounce-in 0.7s alternate;
 }
 
-.slide-in-enter-from {
-  transform: translateX(70%);
+.bounce-in-leave-active {
+    position: absolute;
 }
 
-.slide-in-leave-to {
-  transform: translateX(100%);
+@keyframes bounce-in {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    75% {
+        transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 </style>
