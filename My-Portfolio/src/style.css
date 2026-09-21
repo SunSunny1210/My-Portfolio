@@ -42,7 +42,7 @@ h2 {
   text-shadow: 5px 5px var(--peach);
 }
 
-p {
+p, dl {
   color: white;
   font-size: clamp(1rem, 3vw, 2rem);
 }
