@@ -22,7 +22,7 @@ import Sprinkles from '../complements/Sprinkles.vue';
                         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                     </p>
                     <div class="img-magic">
-                        <Sprinkles/>
+                        <Sprinkles class="right-sprinkles"/>
                         <img class="laptop" src="../../assets/Laptop.png" alt="Pink Laptop">
                     </div>
                 </div>
@@ -48,6 +48,10 @@ import Sprinkles from '../complements/Sprinkles.vue';
 
                 .left-sprinkles {
                     transform: scaleY(0.8);
+                }
+
+                .right-sprinkles {
+                    transform: scaleY(0.9);
                 }
             }
             

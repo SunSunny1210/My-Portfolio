@@ -13,7 +13,7 @@
     left: 0;
     inset: 0;
     z-index: 1;
-    animation: float 3s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
 
     img {
         height: 100%;
