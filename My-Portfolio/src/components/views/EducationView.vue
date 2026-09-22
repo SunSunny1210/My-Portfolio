@@ -58,15 +58,15 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
                     }
 
                     &.first {
-                        transition-delay: 1.3s;
+                        transition-delay: 1s;
                     }
 
                     &.second {
-                        transition-delay: 1.6s;
+                        transition-delay: 1.3s;
                     }
 
                     &.third {
-                        transition-delay: 1.9s;
+                        transition-delay: 1.6s;
                     }
                 }
 
