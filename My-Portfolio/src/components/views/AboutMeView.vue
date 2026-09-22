@@ -83,6 +83,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
 
                 .img-magic.animate {
                     transition-delay: 0.4s;
+                    animation-delay: 1s;
                 }
             }
 
