@@ -1,36 +1,43 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const links = {
     email: {
+        name: "email",
         src: "/src/assets/Gmail.png",
         text: "sol16821@gmail.com"
     },
     phone: {
+        name: "phone",
         src: "/src/assets/Phone.png",
         text: "+34 636453836"
     },
     github: {
+        name: "github",
         src: "/src/assets/Github.png",
         text: "github.com/SunSunny1210"
     },
     linkedin: {
+        name: "linkedin",
         src: "/src/assets/Linkedin.png",
         text: "yiyiyiyiyiyi"
     }
 }
 
 const left = ref(false);
+const animate = ref(false);
+
+onMounted(() => setTimeout(() => animate.value = true, 800));
 </script>
 
 <template>
     <div class="contact beige-main flex-center-column">
         <h2 class="beige-title">Contact</h2>
         <div class="contact-info flex-center">
-            <div @click="left = true" class="links flex-center-column" :class="{ left: left }">
-                <div v-for="link in links" class="link flex-center">
+            <div @click="left = true" class="links flex-center-column" :class="{ left }">
+                <div :class="{ animate }" v-for="link in links" :key="link.name" class="link flex-center">
                     <div class="img-back">
-                        <img :src="link.src" alt="">
+                        <img :src="link.src" :alt="link.name">
                     </div>
                     <p>{{ link.text }}</p>
                 </div>
@@ -59,7 +66,13 @@ const left = ref(false);
                 padding: 1rem;
                 width: 0;
                 align-items: flex-start;
+                scale: 0;
                 
+                &.animate {
+                    animation: scale 0.4s ease-in-out;
+                    scale: 1;
+                }
+
                 .img-back {
                     padding: 1rem;
                     background: radial-gradient(
@@ -93,6 +106,7 @@ const left = ref(false);
                     border-radius: 0 50px 50px 0;
                     transform: translateY(-50%);
                     transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+                    opacity: 0;
                     z-index: 0;
                 }
             }
@@ -100,8 +114,21 @@ const left = ref(false);
             &.left .link p {
                 width: 30vw;
                 left: 80%;
+                opacity: 1;
             }
         }
+    }
+}
+
+@keyframes scale {
+    0% {
+        scale: 0;
+    }
+    70% {
+        scale: 1.2;
+    }
+    100% {
+        scale: 1;
     }
 }
 </style>
