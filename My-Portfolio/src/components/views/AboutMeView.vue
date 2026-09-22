@@ -1,6 +1,10 @@
 <script setup>
+import { onMounted, ref } from 'vue';
 import Sprinkles from '../complements/Sprinkles.vue';
 
+const animate = ref(false);
+
+onMounted(() => setTimeout(() => animate.value = true, 600));
 </script>
 
 <template>
@@ -9,19 +13,19 @@ import Sprinkles from '../complements/Sprinkles.vue';
         <div class="about-info flex-center">
             <div class="info">
                 <div class="left flex-center">
-                    <div class="img-magic">
+                    <div :class="{ animate }" class="img-magic">
                         <Sprinkles class="left-sprinkles"/>
                         <img class="controller" src="../../assets/Controller.png" alt="Pink Controller">
                     </div>
-                    <p>
+                    <p :class="{ animate }">
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     </p>
                 </div>
                 <div class="right flex-center">
-                    <p>
+                    <p :class="{ animate }">
                         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                     </p>
-                    <div class="img-magic">
+                    <div :class="{ animate }" class="img-magic">
                         <Sprinkles class="right-sprinkles"/>
                         <img class="laptop" src="../../assets/Laptop.png" alt="Pink Laptop">
                     </div>
@@ -40,11 +44,14 @@ import Sprinkles from '../complements/Sprinkles.vue';
             padding: 2rem;
             background-color: var(--dark-pink);
             border: 1rem double var(--soft-pink);
-
+            
             .img-magic {
                 position: relative;
                 width: fit-content;
                 shape-outside: margin-box;
+                transform: scale(0);
+                transition: transform 0.5s ease-in-out;
+                animation: wiggle 2s ease-in-out infinite alternate;
 
                 .left-sprinkles {
                     transform: scaleY(0.8);
@@ -52,6 +59,10 @@ import Sprinkles from '../complements/Sprinkles.vue';
 
                 .right-sprinkles {
                     transform: scaleY(0.9);
+                }
+
+                &.animate {
+                    transform: scale(1);
                 }
             }
             
@@ -69,12 +80,24 @@ import Sprinkles from '../complements/Sprinkles.vue';
                 p {
                     text-align: left;
                 }
+
+                .img-magic.animate {
+                    transition-delay: 0.4s;
+                }
+            }
+
+            p {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 0.8s;
+
+                &.animate {
+                    opacity: 1;
+                }
             }
             
             img {
                 width: 9vw;
                 vertical-align: middle;
-                animation: wiggle 2s ease-in-out infinite alternate;
 
                 &.laptop {
                     margin: 0.5rem;

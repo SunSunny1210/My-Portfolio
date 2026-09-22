@@ -24,14 +24,8 @@
     0%, 100% {
         scale: 1 1;
     }
-    25% {
-        rotate: 2deg;
-    }
     50% {
         scale: 1 0.95;
-    }
-    75% {
-        rotate: -2deg;
     }
 }
 </style>
