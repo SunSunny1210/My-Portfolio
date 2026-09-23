@@ -51,7 +51,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
                     color: var(--dark-peach);
                     list-style-position: inside;
                     clip-path: inset(0 100% 0 0);
-                    transition: clip-path 0.5s ease-in-out;
+                    transition: clip-path 1s ease-in-out;
     
                     &.animate {
                         clip-path: inset(0 0 0 0);
