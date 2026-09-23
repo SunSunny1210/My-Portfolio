@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const links = {
     email: {
@@ -25,18 +25,32 @@ const links = {
 }
 
 const left = ref(false);
-const animate = ref(false);
+const pop = ref(false);
+const noPop = ref(false);
+const wiggle = ref(false);
 
-onMounted(() => setTimeout(() => animate.value = true, 800));
+function onClick() {
+    wiggle.value = false;
+    left.value = true;
+}
+
+function onceAnimationDone() {
+    noPop.value = true;
+    pop.value = false;
+    setTimeout(() => wiggle.value = true, 1000)
+    
+}
+
+onMounted(() => setTimeout(() => pop.value = true, 800));
 </script>
 
 <template>
     <div class="contact beige-main flex-center-column">
         <h2 class="beige-title">Contact</h2>
         <div class="contact-info flex-center">
-            <div @click="left = true" class="links flex-center-column" :class="{ left }">
-                <div :class="{ animate }" v-for="link in links" :key="link.name" class="link flex-center">
-                    <div class="img-back">
+            <div @click="onClick" class="links flex-center-column" :class="{ left }">
+                <div :class="{ pop, wiggle, noPop }" @animationend.once="onceAnimationDone" v-for="link in links" :key="link.name" class="link flex-center">
+                    <div class="img-back flex-center">
                         <img :src="link.src" :alt="link.name">
                     </div>
                     <p>{{ link.text }}</p>
@@ -65,12 +79,18 @@ onMounted(() => setTimeout(() => animate.value = true, 800));
                 position: relative;
                 padding: 1rem;
                 width: 0;
-                align-items: flex-start;
                 scale: 0;
                 
-                &.animate {
-                    animation: scale 0.4s ease-in-out;
+                &.pop {
+                    animation: scale 0.7s ease-in-out;
+                }
+                
+                &.noPop {
                     scale: 1;
+                }
+
+                &.wiggle {
+                    animation: wiggle 3s infinite linear;
                 }
 
                 .img-back {
@@ -124,11 +144,39 @@ onMounted(() => setTimeout(() => animate.value = true, 800));
     0% {
         scale: 0;
     }
-    70% {
+    40% {
         scale: 1.2;
+        rotate: -5deg;
+    }
+    60% {
+        rotate: 5deg;
+    }
+    80% {
+        rotate: 0;
     }
     100% {
         scale: 1;
+    }
+}
+
+@keyframes wiggle {
+    0%, 15% {
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(-5deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    30% {
+        transform: rotate(-5deg);
+    }
+    35% {
+        transform: rotate(5deg);
+    }
+    40%, 100% {
+        transform: rotate(0);
     }
 }
 </style>
