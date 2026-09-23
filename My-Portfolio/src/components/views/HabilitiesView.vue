@@ -1,4 +1,14 @@
-<script setup></script>
+<script setup>
+
+const skills = [
+    "Yayayayaya",
+    "Yayayayaya",
+    "Yayayayaya",
+    "Yayayayaya",
+    "Yayayayaya",
+    "Yayayayaya"
+]
+</script>
 
 <template>
     <div class="habilities pink-main flex-center-column">
@@ -8,12 +18,7 @@
                 <div class="hability-cell flex-center-column" id="skills">
                     <h3>Skills</h3>
                     <ul class="flex-center-column">
-                        <li>Yayaya</li>
-                        <li>Yayaya</li>
-                        <li>Yayaya</li>
-                        <li>Yayaya</li>
-                        <li>Yayaya</li>
-                        <li>Yayaya</li>
+                        <li class="skill" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">{{ skill }}</li>
                     </ul>
                 </div>
                 <div class="hability-cell flex-center-column" id="languages">
@@ -84,6 +89,14 @@
                         color: white;
                         background-color: var(--dark-pink);
                         border: 1rem double var(--main-pink);
+                        list-style: none;
+
+                        &.skill {
+                            clip-path: inset(0 100% 0 0);
+                            overflow: hidden;
+                            white-space: nowrap;
+                            animation: typing 1.5s steps(var(--chars), end) forwards var(--delay);
+                        }
 
                         progress {
                             -webkit-appearance: none;
@@ -127,6 +140,15 @@
                 }
             }
         }
+    }
+}
+
+@keyframes typing {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
     }
 }
 </style>
