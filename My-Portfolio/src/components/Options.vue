@@ -6,10 +6,12 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const routes = router.getRoutes();
 const shrink = ref(false);
+
+const emit = defineEmits(["is-done"]);
 </script>
 
 <template>
-    <div class="options-view flex-center-column" :class="{ shrink: shrink }">
+    <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink }">
         <div class="options flex-center-column">
             <RouterLink @click="shrink = true" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
         </div>

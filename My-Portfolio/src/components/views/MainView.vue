@@ -1,12 +1,15 @@
 <script setup>
+import { ref } from 'vue';
 import Options from '../Options.vue';
+
+const isDone = ref(false);
 </script>
 
 <template>
     <div class="main-view">
-        <Options/>
+        <Options @is-done="(v) => isDone = v"/>
         <RouterView v-slot="{ Component }">
-            <Transition name="bounce-in" mode="in-out">
+            <Transition :name="isDone ? 'bounce-in' : ''" mode="in-out">
                 <component :is="Component"/>
             </Transition>
         </RouterView>
