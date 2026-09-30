@@ -43,8 +43,8 @@ onMounted(() => setTimeout(() => {
 </script>
 
 <template>
-    <div class="contact beige-main flex-center-column">
-        <h2 class="beige-title">Contact</h2>
+    <div class="contact pink-main flex-center-column">
+        <h2 class="pink-title">Contact</h2>
         <div class="contact-info flex-center">
             <div @click="left = true" class="links flex-center-column" :class="{ left }">
                 <div :class="{ pop, wiggle, scaled }" @animationend.once="wiggle = true" v-for="link in links" :key="link.name" class="link flex-center">
@@ -96,11 +96,11 @@ onMounted(() => setTimeout(() => {
                     background: radial-gradient(
                         circle,
                         white 0 60%,
-                        var(--beige) 60% 65%,
+                        var(--soft-pink) 60% 65%,
                         white 65% 70%,
-                        var(--beige) 70% 75%,
+                        var(--soft-pink) 70% 75%,
                         white 75% 80%,
-                        var(--beige) 80% 100%
+                        var(--soft-pink) 80% 100%
                     );
                     border-radius: 50%;
                     z-index: 1;
@@ -120,7 +120,7 @@ onMounted(() => setTimeout(() => {
                     overflow: hidden;
                     white-space: nowrap;
                     text-align: center;
-                    background-color: var(--peach);
+                    background-color: var(--main-pink);
                     border-radius: 0 50px 50px 0;
                     transform: translateY(-50%);
                     transition: width 0.5s ease-in-out, left 0.5s ease-in-out;

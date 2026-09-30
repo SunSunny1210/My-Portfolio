@@ -1,9 +1,10 @@
-import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import IntroductionView from './components/views/IntroductionView.vue'
 import AboutMeView from './components/views/AboutMeView.vue'
 import EducationView from './components/views/EducationView.vue'
 import HabilitiesView from './components/views/HabilitiesView.vue'
 import ContactView from './components/views/ContactView.vue'
+import MyProjectView from './components/views/MyProjectView.vue'
 
 
 const routes = [
@@ -11,6 +12,7 @@ const routes = [
   { name: "About Me", path: '/about-me', component: AboutMeView },
   { name: "Education", path: '/education', component: EducationView },
   { name: "Habilities", path: '/habilities', component: HabilitiesView },
+  { name: "My Project", path: '/my-project', component: MyProjectView },
   { name: "Contact", path: '/contact', component: ContactView },
 ]
 
