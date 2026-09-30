@@ -19,7 +19,9 @@ const skills = [
                 <div class="hability-cell flex-center-column" id="skills">
                     <h3>Skills</h3>
                     <ul class="flex-center-column">
-                        <li class="skill" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">{{ skill }}</li>
+                        <li class="skill" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">
+                            <span>{{ skill }}</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="hability-cell flex-center-column" id="languages">
@@ -97,10 +99,13 @@ const skills = [
                         list-style: none;
 
                         &.skill {
-                            clip-path: inset(0 100% 0 0);
                             overflow: hidden;
                             white-space: nowrap;
-                            animation: typing 1.5s steps(var(--chars), end) forwards var(--delay);
+                            
+                            span {
+                                clip-path: inset(0 100% 0 0);
+                                animation: typing 1.5s steps(var(--chars), end) forwards var(--delay);
+                            }
                         }
                         
                         .progress {
@@ -155,19 +160,19 @@ const skills = [
 
             #languages, #coding {
                 img.first, .first::after {
-                    animation-delay: 0.3s;
+                    animation-delay: 0.5s;
                 }
 
                 img.second, .second::after {
-                    animation-delay: 0.6s;
+                    animation-delay: 0.8s;
                 }
 
                 img.third, .third::after {
-                    animation-delay: 0.9s;
+                    animation-delay: 1.1s;
                 }
 
                 img.fourth {
-                    animation-delay: 1.2s;
+                    animation-delay: 1.4s;
                 }
 
             }
