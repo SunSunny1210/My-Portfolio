@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 
 const skills = [
     "Yayayayaya",
@@ -25,16 +26,16 @@ const skills = [
                     <h3>Languages</h3>
                     <ul class="flex-center-column">
                         <li class="flex-center-column">
-                            <label for="english">English</label>
-                            <progress id="english" value="100"></progress>
+                            <span>English</span>
+                            <div class="progress english"></div>
                         </li>
                         <li class="flex-center-column">
-                            <label for="spanish">Spanish</label>
-                            <progress id="spanish" value="100"></progress>
+                            <span>Spanish</span>
+                            <div class="progress spanish"></div>
                         </li>
                         <li class="flex-center-column">
-                            <label for="catalan">Catalan</label>
-                            <progress id="catalan" value="100"></progress>
+                            <span>Catalan</span>
+                            <div class="progress catalan"></div>
                         </li>
                     </ul>
                 </div>
@@ -81,11 +82,15 @@ const skills = [
                 }
 
                 ul {
+                    padding: 1rem;
+                    width: 100%;
                     gap: 2vh;
-
+                    
                     li {
                         padding: 1rem;
+                        width: 100%;
                         gap: 0.5rem;
+                        text-align: center;
                         color: white;
                         background-color: var(--dark-pink);
                         border: 1rem double var(--main-pink);
@@ -97,21 +102,35 @@ const skills = [
                             white-space: nowrap;
                             animation: typing 1.5s steps(var(--chars), end) forwards var(--delay);
                         }
-
-                        progress {
-                            -webkit-appearance: none;
-                            appearance: none;
-                            height: 1rem;
-                        }
-
-                        progress::-webkit-progress-bar {
-                            background-color: white;
-                            border-radius: 20px;
-                        }
                         
-                        progress::-webkit-progress-value {
-                            background-color: var(--peach);
+                        .progress {
+                            position: relative;
+                            height: 2vh;
+                            width: 100%;
+                            background-color: var(--beige);
                             border-radius: 20px;
+                            
+                            &::after {
+                                content: " ";
+                                position: absolute;
+                                top: 0;
+                                left: 50%;
+                                height: 2vh;
+                                width: 100%;
+                                clip-path: inset(0 100% 0 0);
+                                translate: -50%;
+                                background-color: var(--peach);
+                                border-radius: 20px;
+                                animation: progress 1.5s ease-in-out forwards;
+                            }
+                        }
+
+                        .spanish::after {
+                            animation-delay: 0.3s;
+                        }
+
+                        .catalan::after {
+                            animation-delay: 0.6s;
                         }
                     }
                 }
@@ -149,6 +168,27 @@ const skills = [
     }
     to {
         clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes progress {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    70% {
+        clip-path: inset(0 0 0 0);
+    }
+    71% {
+        clip-path: inset(0 0 0 0);
+        transform: scale(1);
+    }
+    85% {
+        clip-path: inset(0 0 0 0);
+        transform: scale(1.1);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+        transform: scale(1);
     }
 }
 </style>
