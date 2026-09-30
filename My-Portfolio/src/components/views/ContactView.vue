@@ -22,34 +22,32 @@ const links = {
         src: "/src/assets/Linkedin.png",
         text: "yiyiyiyiyiyi"
     }
-}
+};
 
 const left = ref(false);
 const pop = ref(false);
-const noPop = ref(false);
+const scaled = ref(false);
 const wiggle = ref(false);
 
-function onClick() {
-    wiggle.value = false;
-    left.value = true;
-}
+watch(left, (newLeft) => {
+    if (newLeft === true) {
+        pop.value = false;
+        wiggle.value = false;
+    };
+});
 
-function onceAnimationDone() {
-    noPop.value = true;
-    pop.value = false;
-    setTimeout(() => wiggle.value = true, 1000)
-    
-}
-
-onMounted(() => setTimeout(() => pop.value = true, 800));
+onMounted(() => setTimeout(() => {
+    scaled.value = true;
+    pop.value = true;
+}, 800));
 </script>
 
 <template>
     <div class="contact beige-main flex-center-column">
         <h2 class="beige-title">Contact</h2>
         <div class="contact-info flex-center">
-            <div @click="onClick" class="links flex-center-column" :class="{ left }">
-                <div :class="{ pop, wiggle, noPop }" @animationend.once="onceAnimationDone" v-for="link in links" :key="link.name" class="link flex-center">
+            <div @click="left = true" class="links flex-center-column" :class="{ left }">
+                <div :class="{ pop, wiggle, scaled }" @animationend.once="wiggle = true" v-for="link in links" :key="link.name" class="link flex-center">
                     <div class="img-back flex-center">
                         <img :src="link.src" :alt="link.name">
                     </div>
@@ -82,15 +80,15 @@ onMounted(() => setTimeout(() => pop.value = true, 800));
                 scale: 0;
                 
                 &.pop {
-                    animation: scale 0.7s ease-in-out;
+                    animation: scale 0.7s ease-in-out forwards;
                 }
                 
-                &.noPop {
+                &.scaled {
                     scale: 1;
                 }
 
                 &.wiggle {
-                    animation: wiggle 3s infinite linear;
+                    animation: wiggle 3s infinite linear 1s;
                 }
 
                 .img-back {
@@ -137,25 +135,6 @@ onMounted(() => setTimeout(() => pop.value = true, 800));
                 opacity: 1;
             }
         }
-    }
-}
-
-@keyframes scale {
-    0% {
-        scale: 0;
-    }
-    40% {
-        scale: 1.2;
-        rotate: -5deg;
-    }
-    60% {
-        rotate: 5deg;
-    }
-    80% {
-        rotate: 0;
-    }
-    100% {
-        scale: 1;
     }
 }
 

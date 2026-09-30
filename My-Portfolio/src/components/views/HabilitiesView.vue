@@ -27,25 +27,25 @@ const skills = [
                     <ul class="flex-center-column">
                         <li class="flex-center-column">
                             <span>English</span>
-                            <div class="progress english"></div>
+                            <div class="progress first"></div>
                         </li>
                         <li class="flex-center-column">
                             <span>Spanish</span>
-                            <div class="progress spanish"></div>
+                            <div class="progress second"></div>
                         </li>
                         <li class="flex-center-column">
                             <span>Catalan</span>
-                            <div class="progress catalan"></div>
+                            <div class="progress third"></div>
                         </li>
                     </ul>
                 </div>
                 <div class="hability-cell flex-center-column" id="coding">
                     <h3>Coding</h3>
                     <div class="icons flex-center">
-                        <img src="../../assets/HTML.png" alt="HTML 5 Icon">
-                        <img src="../../assets/CSS.png" alt="CSS Icon">
-                        <img src="../../assets/JS.png" alt="JS Icon">
-                        <img src="../../assets/VUE.png" alt="Vue Icon">
+                        <img class="first" src="../../assets/HTML.png" alt="HTML 5 Icon">
+                        <img class="second" src="../../assets/CSS.png" alt="CSS Icon">
+                        <img class="third" src="../../assets/JS.png" alt="JS Icon">
+                        <img class="fourth" src="../../assets/VUE.png" alt="Vue Icon">
                     </div>
                 </div>
             </div>
@@ -124,14 +124,6 @@ const skills = [
                                 animation: progress 1.5s ease-in-out forwards;
                             }
                         }
-
-                        .spanish::after {
-                            animation-delay: 0.3s;
-                        }
-
-                        .catalan::after {
-                            animation-delay: 0.6s;
-                        }
                     }
                 }
             }
@@ -155,8 +147,29 @@ const skills = [
 
                     img {
                         width: 5vw;
+                        scale: 0;
+                        animation: scale 0.5s ease-in-out forwards;
                     }
                 }
+            }
+
+            #languages, #coding {
+                img.first, .first::after {
+                    animation-delay: 0.3s;
+                }
+
+                img.second, .second::after {
+                    animation-delay: 0.6s;
+                }
+
+                img.third, .third::after {
+                    animation-delay: 0.9s;
+                }
+
+                img.fourth {
+                    animation-delay: 1.2s;
+                }
+
             }
         }
     }
