@@ -130,7 +130,7 @@ onMounted(() => setTimeout(() => {
             }
 
             &.left .link p {
-                width: 30vw;
+                width: 32vw;
                 left: 80%;
                 opacity: 1;
             }
