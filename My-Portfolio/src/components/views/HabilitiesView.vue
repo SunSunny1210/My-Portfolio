@@ -76,13 +76,6 @@ const skills = [
                 border: 1rem double var(--soft-pink);
                 gap: 2vh;
 
-                h3 {
-                    color: white;
-                    text-decoration: underline solid white;
-                    text-underline-offset: 0.5rem;
-                    font-size: 3rem;
-                }
-
                 ul {
                     padding: 1rem;
                     width: 100%;

@@ -1,10 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { routes } from '../router';
 
-
-const router = useRouter();
-const routes = router.getRoutes();
 const shrink = ref(false);
 
 const emit = defineEmits(["is-done"]);

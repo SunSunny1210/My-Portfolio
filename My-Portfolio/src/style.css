@@ -34,6 +34,13 @@ h2 {
   text-underline-offset: 1rem;
 }
 
+h3 {
+  color: white;
+  text-decoration: underline solid white;
+  text-underline-offset: 0.5rem;
+  font-size: 3rem;
+}
+
 .pink-title {
   text-shadow: 5px 5px var(--main-pink);
 }
@@ -44,7 +51,7 @@ h2 {
 
 p, dl {
   color: white;
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 
 li {
