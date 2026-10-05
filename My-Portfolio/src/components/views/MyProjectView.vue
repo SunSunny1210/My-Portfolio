@@ -1,14 +1,12 @@
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { projectRoutes } from '../../router';
 import { computed } from 'vue';
 
 const route = useRoute();
+const router = useRouter();
 
-const currentIndex = computed(() => {
-    const index = projectRoutes.indexOf(route.path) + 1;
-    return index <= 0 ? 1 : index;
-    });
+const currentIndex = computed(() => projectRoutes.findIndex(project => project.name === route.name) + 1);
 </script>
 
 <template>
@@ -16,9 +14,9 @@ const currentIndex = computed(() => {
         <h2 class="beige-title">My Biggest Project</h2>
         <div class="project-views flex-center-column">
             <div class="index-arrows flex-center">
-                <button>&#9668;</button>
+                <button :disabled="currentIndex <= 1" @click="router.push(projectRoutes[currentIndex - 2])">&#9668;</button>
                 <span>{{ currentIndex }} / {{ projectRoutes.length }}</span>
-                <button>&#9658;</button>
+                <button :disabled="currentIndex === projectRoutes.length" @click="router.push(projectRoutes[currentIndex])">&#9658;</button>
             </div>
             <RouterView/>
         </div>
