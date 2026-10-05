@@ -14,7 +14,7 @@ const isDone = ref(false);
             </Transition>
         </RouterView>
     </div>
-</template>
+</template> 
 
 <style scoped>
 .main-view {

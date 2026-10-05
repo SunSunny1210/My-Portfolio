@@ -35,10 +35,6 @@
         .title-and-text { 
             height: 100%;
             gap: 2rem;
-            
-            h3 {
-                text-shadow: 5px 5px var(--dark-peach);
-            }
 
             p {
                 font-size: clamp(1rem, 2vw, 2rem);
