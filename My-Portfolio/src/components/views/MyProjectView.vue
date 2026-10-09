@@ -84,10 +84,10 @@ function goBack () {
 
 @keyframes slide-in {
     0% {
-        transform: skewX(0deg) translateX(100%);
+        transform: skewX(0deg) translateX(110%);
     }
     20% {
-        transform: skewX(-10deg) translateX(100%);
+        transform: skewX(-10deg) translateX(110%);
     }
     75% {
         transform: skewX(0) translateX(0%);
