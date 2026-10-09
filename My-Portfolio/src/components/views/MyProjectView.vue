@@ -1,12 +1,20 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
 import { projectRoutes } from '../../router';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const route = useRoute();
 const router = useRouter();
 
+const isBack = ref(false);
+
 const currentIndex = computed(() => projectRoutes.findIndex(project => project.name === route.name) + 1);
+
+function goBack () {
+    isBack.value = true;
+    setTimeout(() => isBack.value = false, 500);
+    router.push(projectRoutes[currentIndex.value - 2]);
+}
 </script>
 
 <template>
@@ -14,12 +22,12 @@ const currentIndex = computed(() => projectRoutes.findIndex(project => project.n
         <h2 class="beige-title">My Biggest Project</h2>
         <div class="project-views flex-center-column">
             <div class="index-arrows flex-center">
-                <button :disabled="currentIndex <= 1" @click="router.push(projectRoutes[currentIndex - 2])">&#9668;</button>
+                <button :disabled="currentIndex <= 1" @click="goBack">&#9668;</button>
                 <span>{{ currentIndex }} / {{ projectRoutes.length }}</span>
                 <button :disabled="currentIndex === projectRoutes.length" @click="router.push(projectRoutes[currentIndex])">&#9658;</button>
             </div>
             <RouterView v-slot="{ Component }">
-                <Transition name="slide" mode="out-in">
+                <Transition :name="isBack ? 'back' : 'slide'" mode="out-in">
                     <component :is="Component"/>
                 </Transition>
             </RouterView>
@@ -65,6 +73,15 @@ const currentIndex = computed(() => projectRoutes.findIndex(project => project.n
     animation: slide-out 0.3s ease-out forwards;
 }
 
+.back-enter-active {
+    transform-origin: bottom center;
+    animation: back-in 0.5s ease-in-out forwards;
+}
+
+.back-leave-active {
+    animation: back-out 0.3s ease-out forwards;
+}
+
 @keyframes slide-in {
     0% {
         transform: skewX(0deg) translateX(100%);
@@ -89,6 +106,33 @@ const currentIndex = computed(() => projectRoutes.findIndex(project => project.n
     }
     100% {
         transform: skewX(-10deg) translateX(-100%);
+    }
+}
+
+@keyframes back-in {
+    0% {
+        transform: skewX(0deg) translateX(-110%);
+    }
+    20% {
+        transform: skewX(10deg) translateX(-110%);
+    }
+    75% {
+        transform: skewX(0) translateX(0%);
+    }
+    75.1% {
+        transform: skewX(-15deg);
+    }
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes back-out {
+    0% {
+        transform: skewX(0deg) translateX(0%);
+    }
+    100% {
+        transform: skewX(10deg) translateX(100%);
     }
 }
 </style>
