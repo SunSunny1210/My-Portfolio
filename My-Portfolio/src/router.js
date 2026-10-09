@@ -8,11 +8,13 @@ import MyProjectView from './components/views/MyProjectView.vue'
 import ProjectIntroduction from './components/views/child views/ProjectIntroduction.vue'
 import ProjectObjective from './components/views/child views/ProjectObjective.vue'
 import ProjectFeatures from './components/views/child views/ProjectFeatures.vue'
+import ProjectConclusion from './components/views/child views/ProjectConclusion.vue'
 
 export const projectRoutes = [
   { name: "Project Introduction", path: "", component: ProjectIntroduction },
   { name: "Project Objective", path: "objective", component: ProjectObjective },
   { name: "Project Features", path: "features", component: ProjectFeatures },
+  { name: "Project Conclusion", path: "conclusion", component: ProjectConclusion },
 ]
 
 export const routes = [
