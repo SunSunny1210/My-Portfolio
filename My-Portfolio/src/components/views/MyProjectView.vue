@@ -41,6 +41,7 @@ function goBack () {
 }
 
 .project-views {
+    width: 60vw;
     flex: 1;
 
     h3 {

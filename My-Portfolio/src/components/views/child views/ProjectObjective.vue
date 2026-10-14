@@ -23,6 +23,7 @@
     
     .objective-info {
         padding: 1rem;
+        min-height: 0;
         height: 100%;
         gap: 2rem;
         background-color: var(--peach);
@@ -38,7 +39,7 @@
             border: 1rem double var(--beige);
 
             img {
-                
+                height: 100%;
             }
         }
     }

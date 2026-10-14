@@ -15,30 +15,35 @@
 </template>
 
 <style scoped>
-.conclusion-info {
-    padding: 2rem;
+.project-conclusion {
     height: 60vh;
-    justify-content: space-around;
-    background-color: var(--peach);
-    border: 1rem double var(--beige);
+    width: 100%;
 
-    .img-back {    
-        height: 100%;
-        
-        img {
-            height: 80%;
-            aspect-ratio: 1;
-        }
-    }
+    .conclusion-info {
+        padding: 2rem;
+        min-height: 0;
+        justify-content: space-around;
+        background-color: var(--peach);
+        border: 1rem double var(--beige);
     
-    .title-and-text { 
-        height: 100%;
-        gap: 2rem;
-
-        p {
-            max-width: 100%;
-            overflow-wrap: break-word;
-            font-size: clamp(1rem, 2vw, 2rem);
+        .img-back {    
+            height: 100%;
+            
+            img {
+                height: 80%;
+                aspect-ratio: 1;
+            }
+        }
+        
+        .title-and-text { 
+            min-height: 0;
+            height: 100%;
+            gap: 2vh;
+    
+            p {
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
         }
     }
 }

@@ -3,7 +3,6 @@ import { ref, onBeforeUnmount, onMounted } from 'vue';
 
 const offsetY = ref(0);
 const show = ref(false);
-const isOpen = ref(true);
 
 let dragging = false;
 let startY = 0;
@@ -37,10 +36,6 @@ function stopDrag() {
 
     if (offsetY.value < -window.innerHeight / 2) offsetY.value = -window.innerHeight * 2;
     else offsetY.value = 0;
-
-    if (offsetY.value === -window.innerHeight * 2) {
-        isOpen.value = false;
-    }
     
     window.removeEventListener('pointermove', onDrag);
     window.removeEventListener('pointercancel', stopDrag);
@@ -53,7 +48,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
 </script>
 
 <template>
-    <div v-if="isOpen" class="main-title flex-center-column" :style="{ transform: `translateY(${offsetY}px)` }">
+    <div class="main-title flex-center-column" :style="{ transform: `translateY(${offsetY}px)` }">
         <div :class="{ show }" class="titles flex-center-column">
             <h1>My Portfolio</h1>
             <h2>Sun's projects</h2>

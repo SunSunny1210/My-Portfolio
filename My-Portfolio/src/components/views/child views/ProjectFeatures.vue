@@ -34,6 +34,10 @@
     
     .features {
         min-height: 0;
+
+        ul {
+            min-height: 0;
+        }
         
         .first-half, .second-half {
             padding: 1rem;
@@ -45,10 +49,6 @@
             background-color: var(--peach);
             border: 1rem double var(--beige);
             flex: 1;
-            
-            li {
-                font-size: 2rem;
-            }
         }
 
         .img-middle {

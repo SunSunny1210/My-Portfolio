@@ -26,7 +26,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: clamp(3rem, 1rem + 3vw, 4rem);
   font-style: oblique;
   letter-spacing: 1rem;
   color: white;
@@ -38,7 +38,7 @@ h3 {
   color: white;
   text-decoration: underline solid white;
   text-underline-offset: 0.5rem;
-  font-size: 3rem;
+  font-size: clamp(2rem, 1rem + 2vw, 3rem);
 }
 
 .pink-title {
@@ -51,7 +51,7 @@ h3 {
 
 p, dl {
   color: white;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1rem, 0.5rem + 1vw, 2rem);
 }
 
 li {

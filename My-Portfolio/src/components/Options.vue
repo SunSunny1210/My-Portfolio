@@ -28,12 +28,14 @@ const emit = defineEmits(["is-done"]);
 
     .options {
         padding: 3rem;
+        height: 100%;
         width: 40%;
         gap: 4rem;
         transition: width 0.4s ease-in-out;
     
         .option {
             padding: 1rem;
+            min-height: 0;
             width: 100%;
             font-size: 2rem;
             text-decoration: none;

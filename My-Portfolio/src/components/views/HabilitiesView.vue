@@ -18,7 +18,7 @@ const skills = [
                 <div class="hability-cell flex-center-column" id="skills">
                     <h3>Skills</h3>
                     <ul class="flex-center-column">
-                        <li class="skill" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">
+                        <li class="skill flex-center" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">
                             <span>{{ skill }}</span>
                         </li>
                     </ul>
@@ -58,9 +58,12 @@ const skills = [
 .habilities {
     .habilities-info {
         padding-top: 3rem;
+        max-height: fit-content;
+        min-height: 0;
         flex: 1;
 
         .habilities-grid {
+            height: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;
@@ -71,17 +74,20 @@ const skills = [
 
             .hability-cell {
                 padding: 1rem;
+                min-height: 0;
                 background-color: var(--main-pink);
                 border: 1rem double var(--soft-pink);
                 gap: 2vh;
+                flex: 1;
 
                 ul {
                     padding: 1rem;
+                    min-height: 0;
                     width: 100%;
-                    gap: 2vh;
                     
                     li {
                         padding: 1rem;
+                        min-height: 0;
                         width: 100%;
                         gap: 0.5rem;
                         text-align: center;
@@ -126,7 +132,6 @@ const skills = [
             }
 
             #skills {
-                justify-content: space-between;
                 grid-area: skills;
                 list-style-position: inside;
             }
