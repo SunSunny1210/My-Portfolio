@@ -1,13 +1,17 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
+defineProps({
+    open: Boolean
+})
+
 const animate = ref(false);
 
 onMounted(() => setTimeout(() => animate.value = true, 600));
 </script>
 
 <template>
-    <div class="introduction beige-main flex-center-column">
+    <div :class="{ open }" class="introduction beige-main flex-center-column">
         <h2 class="beige-title">Introduction</h2>
         <div class="info flex-center">
             <div class="info-content">

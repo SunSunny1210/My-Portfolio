@@ -1,6 +1,10 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue';
 
+defineProps({
+    open: Boolean
+})
+
 const links = {
     email: {
         name: "email",
@@ -43,7 +47,7 @@ onMounted(() => setTimeout(() => {
 </script>
 
 <template>
-    <div class="contact pink-main flex-center-column">
+    <div :class="{ open }" class="contact pink-main flex-center-column">
         <h2 class="pink-title">Contact</h2>
         <div class="contact-info flex-center">
             <div @click="left = true" class="links flex-center-column" :class="{ left }">

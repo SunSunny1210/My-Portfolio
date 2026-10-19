@@ -3,14 +3,20 @@ import { ref } from 'vue';
 import Options from '../Options.vue';
 
 const isDone = ref(false);
+const open = ref(false);
 </script>
 
 <template>
     <div class="main-view">
-        <Options @is-done="(v) => isDone = v"/>
+        <Options :open="open" @is-done="(v) => isDone = v"/>
         <RouterView v-slot="{ Component }">
+            <div @click="open = true" class="menu flex-center-column">
+                <hr/>
+                <hr/>
+                <hr/>
+            </div>
             <Transition :name="isDone ? 'bounce-in' : ''" mode="in-out">
-                <component :is="Component"/>
+                <component :open="open" :is="Component"/>
             </Transition>
         </RouterView>
     </div>
@@ -23,6 +29,24 @@ const isDone = ref(false);
     display: flex;
     justify-content: flex-end;
     align-self: center;
+
+    .menu {
+        padding: 1rem;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        width: 10vw;
+        gap: 1vh;
+        aspect-ratio: 1;
+        z-index: 9;
+        
+        hr {
+            height: 7px;
+            width: 100%;
+            background-color: white;
+            border: none;
+        }
+    }
 }
 
 .bounce-in-enter-active {

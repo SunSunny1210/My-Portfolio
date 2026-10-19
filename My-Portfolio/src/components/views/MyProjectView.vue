@@ -3,6 +3,10 @@ import { useRoute, useRouter } from 'vue-router';
 import { projectRoutes } from '../../router';
 import { computed, ref } from 'vue';
 
+defineProps({
+    open: Boolean
+})
+
 const route = useRoute();
 const router = useRouter();
 
@@ -18,7 +22,7 @@ function goBack () {
 </script>
 
 <template>
-    <div class="my-project beige-main flex-center-column">
+    <div :class="{ open }" class="my-project beige-main flex-center-column">
         <h2 class="beige-title">My Biggest Project</h2>
         <div class="project-views flex-center-column">
             <div class="index-arrows flex-center">

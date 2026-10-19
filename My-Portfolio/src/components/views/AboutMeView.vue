@@ -2,13 +2,17 @@
 import { onMounted, ref } from 'vue';
 import Sprinkles from '../complements/Sprinkles.vue';
 
+defineProps({
+    open: Boolean
+})
+
 const animate = ref(false);
 
 onMounted(() => setTimeout(() => animate.value = true, 600));
 </script>
 
 <template>
-    <div class="about-me pink-main flex-center-column">
+    <div :class="{ open }" class="about-me pink-main flex-center-column">
         <h2 class="pink-title">About Me</h2>
         <div class="about-info flex-center">
             <div class="info">

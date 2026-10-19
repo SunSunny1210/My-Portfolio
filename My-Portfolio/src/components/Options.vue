@@ -2,13 +2,17 @@
 import { ref } from 'vue';
 import { routes } from '../router';
 
+const props = defineProps({
+    open: Boolean
+})
+
 const shrink = ref(false);
 
 const emit = defineEmits(["is-done"]);
 </script>
 
 <template>
-    <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink }">
+    <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink, open }">
         <div class="options flex-center-column">
             <RouterLink @click="shrink = true" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
         </div>
@@ -56,6 +60,18 @@ const emit = defineEmits(["is-done"]);
 
         .options {
             width: 100%;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .options-view {
+        &.shrink {
+            transform: translateX(-100%);
+        }
+
+        &.open {
+            transform: translateX(0);
         }
     }
 }

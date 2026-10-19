@@ -1,6 +1,10 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 
+defineProps({
+    open: Boolean
+})
+
 const skills = [
     "Yayayayaya",
     "Yayayayaya",
@@ -44,7 +48,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
 </script>
 
 <template>
-    <div class="habilities pink-main flex-center-column">
+    <div :class="{ open }" class="habilities pink-main flex-center-column">
         <h2 class="pink-title">Habilities</h2>
         <div class="habilities-info flex-center">
             <div class="habilities-grid">
