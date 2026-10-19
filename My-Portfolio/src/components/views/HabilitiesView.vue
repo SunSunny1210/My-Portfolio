@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const skills = [
     "Yayayayaya",
@@ -8,6 +9,38 @@ const skills = [
     "Yayayayaya",
     "Yayayayaya"
 ]
+
+const languages = [
+    {
+        name: 'English',
+        short: 'ENG',
+        progress: 'first'
+    },
+    {
+        name: 'Spanish',
+        short: 'SPA',
+        progress: 'second'
+    },
+    {
+        name: 'Catalan',
+        short: 'CAT',
+        progress: 'third'
+    }
+]
+
+const isShort = ref(false);
+
+function updateHeight() {
+   if (window.innerHeight <= 950) isShort.value = true;
+   else isShort.value = false;
+}
+
+onMounted(() => {
+    updateHeight();
+    window.addEventListener('resize', updateHeight) 
+});
+
+onUnmounted(() => window.removeEventListener('resize', updateHeight));
 </script>
 
 <template>
@@ -26,17 +59,9 @@ const skills = [
                 <div class="hability-cell flex-center-column" id="languages">
                     <h3>Languages</h3>
                     <ul class="flex-center-column">
-                        <li class="flex-center-column">
-                            <span>English</span>
-                            <div class="progress first"></div>
-                        </li>
-                        <li class="flex-center-column">
-                            <span>Spanish</span>
-                            <div class="progress second"></div>
-                        </li>
-                        <li class="flex-center-column">
-                            <span>Catalan</span>
-                            <div class="progress third"></div>
+                        <li v-for="language in languages" class="flex-center-column">
+                            <span>{{ isShort ? language.short : language.name }}</span>
+                            <div :class="language.progress" class="progress"></div>
                         </li>
                     </ul>
                 </div>
@@ -204,6 +229,16 @@ const skills = [
     100% {
         clip-path: inset(0 0 0 0);
         transform: scale(1);
+    }
+}
+
+@media (max-height: 950px) {
+    #languages {
+        ul {
+            li {
+                flex-direction: row;
+            }
+        }
     }
 }
 </style>
