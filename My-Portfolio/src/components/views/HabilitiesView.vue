@@ -141,12 +141,12 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                             &::after {
                                 content: " ";
                                 position: absolute;
-                                top: 0;
+                                top: 50%;
                                 left: 50%;
                                 height: 2vh;
                                 width: 100%;
                                 clip-path: inset(0 100% 0 0);
-                                translate: -50%;
+                                translate: -50% -50%;
                                 background-color: var(--peach);
                                 border-radius: 20px;
                                 animation: progress 1.5s ease-in-out forwards;
