@@ -114,7 +114,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                         padding: 1rem;
                         min-height: 0;
                         width: 100%;
-                        gap: 0.5rem;
+                        gap: 1vw;
                         text-align: center;
                         color: white;
                         background-color: var(--dark-pink);
@@ -237,6 +237,11 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
         ul {
             li {
                 flex-direction: row;
+                justify-content: space-between;
+
+                .progress {
+                    width: 60%;
+                }
             }
         }
     }
