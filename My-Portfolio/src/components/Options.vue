@@ -34,13 +34,14 @@ function onOptionClick() {
     background-color: white;
     transition: width 0.4s ease-in-out, transform 0.4s ease-in-out, left 0.4s ease-in-out;
     z-index: 9;
-
+    
     .options {
         padding: 3rem;
         height: 100%;
         width: 40%;
-        gap: 4rem;
+        gap: 6vh;
         transition: width 0.4s ease-in-out;
+        z-index: 1;
     
         .option {
             padding: 1rem;
@@ -71,7 +72,33 @@ function onOptionClick() {
 @media (max-width: 450px) {
     .options-view {
         .options {
+            padding: 2rem;
             width: 100%;
+
+            .option {
+                font-size: 0.7rem;
+            }
+        }
+
+        &.shrink {
+            width: 40%;
+
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                box-shadow: 0 0 0 100vmax rgba(92, 37, 37, 0.437);
+                transition: opacity 0.5s ease-in-out;
+                z-index: 0;
+            }
+        }
+
+        &.open::after {
+            opacity: 1;
         }
     }
 }

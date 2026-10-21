@@ -94,11 +94,6 @@ img {
 @media (max-width: 950px) {
   .pink-main, .beige-main {
     width: 100%;
-    transition: width 0.4s ease-in-out;
-
-    &.open {
-      width: 70%;
-    }
   }
 }
 

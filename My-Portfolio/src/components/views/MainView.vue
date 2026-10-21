@@ -10,7 +10,10 @@ function updateWidth() {
     isShort.value = window.innerWidth;
 }
 
-onMounted(() => window.addEventListener('resize', updateWidth));
+onMounted(() => {
+    updateWidth();
+    window.addEventListener('resize', updateWidth)
+});
 onUnmounted(() => window.removeEventListener('resize', updateWidth));
 </script>
 
@@ -74,11 +77,10 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
             hr {
                 background-color: var(--soft-pink);
                 transform-origin: center;
-                translate: -50% -50%;
+                translate: 0 -50%;
                 
                 &#one, &#two, &#three {
                     top: 50%;
-                    left: 50%;
                 }
                 
                 &#one, &#two {
@@ -114,6 +116,20 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
     }
     100% {
         transform: translateY(0%);
+    }
+}
+
+@media (max-width: 450px) {
+    .main-view {
+        .menu {
+            hr {
+                height: 3px;
+
+                &#three {
+                    top: calc(100% - 3px);
+                }
+            }
+        }
     }
 }
 </style>
