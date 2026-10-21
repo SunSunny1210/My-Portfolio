@@ -33,7 +33,7 @@ function onOptionClick() {
     width: 100%;
     background-color: white;
     transition: width 0.4s ease-in-out, transform 0.4s ease-in-out, left 0.4s ease-in-out;
-    z-index: 2;
+    z-index: 9;
 
     .options {
         padding: 3rem;
@@ -46,7 +46,6 @@ function onOptionClick() {
             padding: 1rem;
             min-height: 0;
             width: 100%;
-            font-size: 2rem;
             text-decoration: none;
             color: white;
             background-color: var(--main-pink);
@@ -63,6 +62,14 @@ function onOptionClick() {
     &.shrink {
         width: 30%;
 
+        .options {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .options-view {
         .options {
             width: 100%;
         }

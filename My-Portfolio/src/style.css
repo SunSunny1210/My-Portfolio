@@ -50,7 +50,7 @@ h3 {
   text-shadow: 5px 5px var(--peach);
 }
 
-p, dl {
+p, dl, a {
   color: white;
   font-size: clamp(1rem, 1rem + 1vw, 2rem);
 }
