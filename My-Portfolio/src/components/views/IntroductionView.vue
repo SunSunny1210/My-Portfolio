@@ -98,4 +98,40 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
         }
     }
 }
+
+@media (max-width: 450px) {
+    .introduction {
+        .info {
+            .info-content {
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+
+                .img-back {
+                    float: none;
+
+                    img {
+                        width: 30vw;
+                    }
+                }
+
+                .info-data {
+                    margin-top: 1rem;
+
+                    dl {
+                        dt {
+                            padding: 0.5rem;
+                        }
+                    }
+                }
+
+                p {
+                    min-height: 0;
+                }
+            }
+        }
+    }
+}
 </style>

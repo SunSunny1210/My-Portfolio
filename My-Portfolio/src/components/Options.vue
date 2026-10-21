@@ -29,7 +29,7 @@ function onOptionClick() {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100svh;
     width: 100%;
     background-color: white;
     transition: width 0.4s ease-in-out, transform 0.4s ease-in-out, left 0.4s ease-in-out;

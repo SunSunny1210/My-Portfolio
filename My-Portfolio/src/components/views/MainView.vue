@@ -27,7 +27,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
                 <hr id="three"/>
             </div>
             <Transition :name="isDone ? 'bounce-in' : ''" mode="in-out">
-                <component :open="open" :is="Component"/>
+                <component class="component" :open="open" :is="Component"/>
             </Transition>
         </RouterView>
     </div>
@@ -92,6 +92,10 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
                 }
             }
         }
+    }
+
+    .component {
+        height: 100svh;
     }
 }
 

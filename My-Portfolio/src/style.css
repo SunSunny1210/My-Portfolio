@@ -18,7 +18,7 @@
 }
 
 body, #app {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -52,7 +52,7 @@ h3 {
 
 p, dl, a {
   color: white;
-  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+  font-size: clamp(1rem, 0.5rem + 1vw, 2rem);
 }
 
 li {
