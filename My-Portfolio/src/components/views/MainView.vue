@@ -1,19 +1,27 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import Options from '../Options.vue';
 
 const isDone = ref(false);
 const open = ref(false);
+const isShort = ref(window.innerWidth);
+
+function updateWidth() {
+    isShort.value = window.innerWidth;
+}
+
+onMounted(() => window.addEventListener('resize', updateWidth));
+onUnmounted(() => window.removeEventListener('resize', updateWidth));
 </script>
 
 <template>
     <div class="main-view">
-        <Options :open="open" @is-done="(v) => isDone = v"/>
+        <Options :open="open" @is-done="(v) => isDone = v" @close="(v) => open = v"/>
         <RouterView v-slot="{ Component }">
-            <div @click="open = true" class="menu flex-center-column">
-                <hr/>
-                <hr/>
-                <hr/>
+            <div v-if="isShort <= 950" @click="open = !open" :class="{ open }" class="menu flex-center-column">
+                <hr id="one"/>
+                <hr id="two"/>
+                <hr id="three"/>
             </div>
             <Transition :name="isDone ? 'bounce-in' : ''" mode="in-out">
                 <component :open="open" :is="Component"/>
@@ -31,20 +39,56 @@ const open = ref(false);
     align-self: center;
 
     .menu {
-        padding: 1rem;
         position: absolute;
-        top: 2%;
-        left: 2%;
-        width: 10vw;
+        top: 3%;
+        left: 3%;
+        width: 7vw;
         gap: 1vh;
-        aspect-ratio: 1;
+        aspect-ratio: 1.5 / 1;
         z-index: 9;
         
         hr {
+            position: absolute;
+            left: 0;
             height: 7px;
             width: 100%;
             background-color: white;
             border: none;
+            transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, translate 0.5s ease-in-out, top 0.5s ease-in-out;
+
+            &#one {
+                top: 0;
+            }
+
+            &#two {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &#three {
+                top: calc(100% - 7px);
+            }
+        }
+
+        &.open {
+            hr {
+                background-color: var(--soft-pink);
+                transform-origin: center;
+                translate: -50% -50%;
+                
+                &#one, &#two, &#three {
+                    top: 50%;
+                    left: 50%;
+                }
+                
+                &#one, &#two {
+                    transform: rotate(45deg);
+                }
+                
+                &#three {
+                    transform: rotate(-45deg);
+                }
+            }
         }
     }
 }

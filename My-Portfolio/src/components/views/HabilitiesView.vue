@@ -147,7 +147,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
-                                height: 2vh;
+                                height: 2.1vh;
                                 width: 100%;
                                 clip-path: inset(0 100% 0 0);
                                 translate: -50% -50%;

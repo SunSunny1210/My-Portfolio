@@ -8,13 +8,18 @@ const props = defineProps({
 
 const shrink = ref(false);
 
-const emit = defineEmits(["is-done"]);
+const emit = defineEmits(["is-done", "close"]);
+
+function onOptionClick() {
+    if (props.open) emit('close', false);
+    else shrink.value = true;
+}
 </script>
 
 <template>
     <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink, open }">
         <div class="options flex-center-column">
-            <RouterLink @click="shrink = true" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
+            <RouterLink @click="onOptionClick" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
         </div>
     </div>
 </template>
@@ -27,7 +32,7 @@ const emit = defineEmits(["is-done"]);
     height: 100%;
     width: 100%;
     background-color: white;
-    transition: width 0.4s ease-in-out, translate 0.4s ease-in-out, left 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out, transform 0.4s ease-in-out, left 0.4s ease-in-out;
     z-index: 2;
 
     .options {
