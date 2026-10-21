@@ -98,12 +98,22 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
         transition: opacity 0.5s linear 2s;
         
         span, p {
-            font-size: 2rem;
             color: var(--main-pink);
         }
 
         &.show {
             opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .main-title {
+        .titles {
+            margin: 1rem;
+            padding: 1rem;
+            border: 1rem solid white;
+            box-shadow: 0 0 0 1rem var(--main-pink);
         }
     }
 }
