@@ -40,12 +40,12 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
         flex: 1;
         
         .info-content {
-            padding: 2rem;
+            padding: 3vh 2vw;
             background-color: var(--peach);
             border: 1rem double var(--beige);
 
             .img-back {
-                margin-right: 2rem;
+                margin-right: 2vw;
                 padding: 0.5rem;
                 width: fit-content;
                 float: inline-start;
@@ -70,11 +70,11 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                     clip-path: inset(0 100% 0 0);
                     overflow: hidden;
                     white-space: nowrap;
-                    gap: 1rem;
+                    gap: 1vw;
                     transition: clip-path 0.5s ease-in-out 0.3s;
 
                     dt {
-                        padding: 1rem;
+                        padding: 1vw;
                         color: var(--dark-peach);
                         background-color: var(--beige);
                         border-radius: 12px;
@@ -99,17 +99,19 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
     .introduction {
         .info {
             .info-content {
                 padding: 1rem;
+                max-height: 80vh;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: column;
 
                 .img-back {
+                    margin: 0;
                     float: none;
 
                     img {
@@ -128,7 +130,10 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                 }
 
                 p {
+                    padding: 0 10px;
                     min-height: 0;
+                    overflow-y: scroll;
+                    scrollbar-color: var(--beige) var(--peach);
                 }
             }
         }

@@ -3,7 +3,8 @@ import { ref } from 'vue';
 import { routes } from '../router';
 
 const props = defineProps({
-    open: Boolean
+    open: Boolean,
+    isDone: Boolean
 })
 
 const shrink = ref(false);
@@ -17,10 +18,11 @@ function onOptionClick() {
 </script>
 
 <template>
-    <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink, open }">
+    <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink, open, isDone }">
         <div class="options flex-center-column">
             <RouterLink @click="onOptionClick" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
         </div>
+        <div class="shadow"></div>
     </div>
 </template>
 
@@ -39,7 +41,7 @@ function onOptionClick() {
         padding: 3rem;
         height: 100%;
         width: 40%;
-        gap: 6vh;
+        gap: 5vh;
         transition: width 0.4s ease-in-out;
         z-index: 1;
     
@@ -50,8 +52,8 @@ function onOptionClick() {
             text-decoration: none;
             color: white;
             background-color: var(--main-pink);
-            border: 5px solid white;
-            box-shadow: 0 0 0 10px var(--main-pink);
+            border: 1vh solid white;
+            box-shadow: 0 0 0 1vh var(--main-pink);
             
             &:hover {
                 background-color: var(--dark-pink);
@@ -74,36 +76,47 @@ function onOptionClick() {
         .options {
             padding: 2rem;
             width: 100%;
+            background-color: white;
 
             .option {
-                font-size: 0.7rem;
+                padding: 2vh 10vw;
+                white-space: nowrap;
             }
         }
 
         &.shrink {
             width: 40%;
 
-            &::after {
+            .shadow {
                 content: " ";
                 position: absolute;
                 top: 0;
                 left: 0;
                 height: 100%;
-                width: 100%;
-                opacity: 0;
+                width: 100vw;
+                background-color: rgba(92, 37, 37, 0.437);
                 box-shadow: 0 0 0 100vmax rgba(92, 37, 37, 0.437);
                 transition: opacity 0.5s ease-in-out;
+                opacity: 0;
                 z-index: 0;
             }
         }
 
-        &.open::after {
-            opacity: 1;
+        &.isDone {
+            .option {
+                font-size: 0.7rem;
+            }
+        }
+
+        &.open {
+            .shadow {
+                opacity: 1;
+            }
         }
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 650px) {
     .options-view {
         &.shrink {
             transform: translateX(-100%);

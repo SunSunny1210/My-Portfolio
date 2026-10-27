@@ -35,7 +35,7 @@ const languages = [
 const isShort = ref(false);
 
 function updateHeight() {
-   if (window.innerHeight <= 950) isShort.value = true;
+   if (window.innerHeight <= 950 & window.innerWidth > 600) isShort.value = true;
    else isShort.value = false;
 }
 
@@ -102,15 +102,14 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
             "skills coding";
 
             .hability-cell {
-                padding: 1rem;
+                padding: 2vw;
                 min-height: 0;
+                min-width: 0;
                 background-color: var(--main-pink);
                 border: 1rem double var(--soft-pink);
                 gap: 2vh;
-                flex: 1;
 
                 ul {
-                    padding: 1rem;
                     min-height: 0;
                     width: 100%;
                     
@@ -174,9 +173,10 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                 grid-area: coding;
 
                 .icons {
-                    gap: 1rem;
+                    gap: 1vw;
 
                     img {
+                        min-width: 0;
                         width: 5vw;
                         scale: 0;
                         animation: scale 0.5s ease-in-out forwards;
@@ -236,7 +236,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     }
 }
 
-@media (max-height: 950px) {
+@media (min-width: 600px) and (max-height: 950px) {
     #languages {
         ul {
             li {
@@ -249,5 +249,29 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
             }
         }
     }
+}
+
+@media (max-width: 450px) {
+    .habilities {
+        .habilities-info {
+            .habilities-grid {
+                .hability-cell {
+                    ul {
+                        li {
+                            padding: 3vw;
+                        }
+                    }
+                }
+
+            #coding {
+                .icons {
+                    img {
+                        width: 7vw;
+                    }
+                }
+            }
+        }
+    }
+}
 }
 </style>

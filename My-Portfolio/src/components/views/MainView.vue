@@ -19,9 +19,9 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
 
 <template>
     <div class="main-view">
-        <Options :open="open" @is-done="(v) => isDone = v" @close="(v) => open = v"/>
+        <Options :open="open" @is-done="(v) => isDone = v" @close="(v) => open = v" :is-done="isDone"/>
         <RouterView v-slot="{ Component }">
-            <div v-if="isShort <= 950" @click="open = !open" :class="{ open }" class="menu flex-center-column">
+            <div v-if="isShort < 650" @click="open = !open" :class="{ open }" class="menu flex-center-column">
                 <hr id="one"/>
                 <hr id="two"/>
                 <hr id="three"/>
