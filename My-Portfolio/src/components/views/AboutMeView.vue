@@ -45,7 +45,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
         flex: 1;
         
         .info {
-            padding: 2rem;
+            padding: 2vw;
             background-color: var(--dark-pink);
             border: 1rem double var(--soft-pink);
             
@@ -101,7 +101,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
             }
             
             img {
-                width: 9vw;
+                width: calc(4rem + 1vw);
                 vertical-align: middle;
 
                 &.laptop {

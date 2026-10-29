@@ -74,7 +74,7 @@ onMounted(() => setTimeout(() => {
             transition: transform 0.5s ease-in-out;
             
             &.left {
-                transform: translateX(-40%);
+                transform: translateX(-16vw);
             }
 
             .link {
@@ -118,8 +118,8 @@ onMounted(() => setTimeout(() => {
                     position: absolute;
                     top: 50%;
                     left: 0%;
-                    padding: 1rem;
-                    padding-left: 3rem;
+                    padding: 2vh 2vw;
+                    padding-left: 5vw;
                     width: 0;
                     overflow: hidden;
                     white-space: nowrap;
@@ -160,6 +160,31 @@ onMounted(() => setTimeout(() => {
     }
     40%, 100% {
         transform: rotate(0);
+    }
+}
+
+@media (max-width: 450px) {
+    .contact {
+        .contact-info {
+            .links {
+                .link {
+                    .img-back {
+                        img {
+                            width: 10vw;
+                        }
+                    }
+
+                }
+
+                &.left {
+                    transform: translateX(calc((-15rem + 2vw) / 2));
+                   .link p {
+                        margin-left: 2vw;
+                        width: calc(15rem + 2vw);
+                    } 
+                } 
+            }
+        }
     }
 }
 </style>

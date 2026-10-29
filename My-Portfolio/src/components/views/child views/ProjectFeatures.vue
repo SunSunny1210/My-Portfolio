@@ -9,7 +9,7 @@
                 <li>Interactive task manager.</li>
                 <li>Different farms management.</li>
             </ul>
-            <div class="img-middle">
+            <div class="img-middle flex-center">
                 <img src="../../../assets/Galagoogoo.png" alt="Galagoogoo">
             </div>
             <ul class="second-half flex-center-column">
@@ -37,10 +37,15 @@
 
         ul {
             min-height: 0;
+
+            li {
+                text-align: start;
+
+            }
         }
         
         .first-half, .second-half {
-            padding: 1rem;
+            padding: 2vh;
             height: 100%;
             align-items: flex-start;
             gap: 1rem;
@@ -48,13 +53,11 @@
             color: white;
             background-color: var(--peach);
             border: 1rem double var(--beige);
-            flex: 1;
         }
 
         .img-middle {
             padding: 1rem;
             height: 100%;
-            flex: 1;
 
             img {
                 aspect-ratio: 0;
@@ -62,6 +65,43 @@
                 height: 90%;
                 width: 100%;
             }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .project-features {
+        width: 100%;
+        
+        .features {
+            position: relative;
+            padding-right: 50%;
+            height: 100%;
+            flex-direction: column;
+
+            ul {
+                width: 100%;
+
+                li {
+                    font-size: calc(0.3rem + 1vh);
+                }
+            }
+
+            .first-half {
+                border-bottom: 0;
+            }
+
+            .second-half {
+                padding-top: 0;
+                border-top: 0;
+            }
+        }
+
+        .img-middle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            aspect-ratio: 1 / 2;
         }
     }
 }

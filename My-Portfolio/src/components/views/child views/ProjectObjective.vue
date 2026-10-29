@@ -20,6 +20,7 @@
 <style scoped>
 .project-objective {
     height: 60vh;
+    max-width: 90vw;
     
     .objective-info {
         padding: 1rem;
@@ -31,7 +32,8 @@
     }
     
     .objective-imgs {
-        height: 100%;
+        height: fit-content;
+        max-width: 50%;
 
         .img-back {
             height: 50%;
@@ -39,7 +41,7 @@
             border: 1rem double var(--beige);
 
             img {
-                height: 100%;
+                height: 20vh;
             }
         }
     }

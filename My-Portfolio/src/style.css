@@ -30,6 +30,7 @@ h2 {
   font-size: clamp(1rem, 1rem + 3vw, 4rem);
   font-style: oblique;
   letter-spacing: 1rem;
+  line-height: 10vh;
   color: white;
   text-decoration: underline double 3px;
   text-underline-offset: 1rem;
@@ -51,8 +52,10 @@ h3 {
 }
 
 p, dl, a {
+  min-height: 0;
+  text-align: justify;
   color: white;
-  font-size: clamp(1rem, 0.5rem + 1vw, 2rem);
+  font-size: clamp(1rem, 0.5rem + 1.2vw, 2rem);
 }
 
 li {
@@ -99,8 +102,16 @@ img {
 
 @media (max-width: 450px) {
   h2 {
+    max-width: 70vw;
     letter-spacing: 5px;
     text-underline-offset: 5px;
+    line-height: 6vh;
+  }
+
+  p {
+    padding: 0 10px;
+    overflow-y: scroll;
+    scrollbar-color: var(--beige) var(--peach);
   }
 }
 

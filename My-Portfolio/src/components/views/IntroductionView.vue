@@ -128,13 +128,6 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                         }
                     }
                 }
-
-                p {
-                    padding: 0 10px;
-                    min-height: 0;
-                    overflow-y: scroll;
-                    scrollbar-color: var(--beige) var(--peach);
-                }
             }
         }
     }

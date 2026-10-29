@@ -15,20 +15,22 @@
 </template>
 
 <style scoped>
+.project-introduction {
+    height: 60vh;
+
     .intro-info {
         padding: 1rem;
-        height: 60vh;
+        height: 100%;
         justify-content: space-around;
         background-color: var(--peach);
         border: 1rem double var(--beige);
 
-        .img-back {    
-            padding: 1rem;
+        .img-back {
             height: 100%;
             
             img {
                 height: 100%;
-                aspect-ratio: 0.5;
+                aspect-ratio: 1 / 2.5;
             }
         }
         
@@ -37,4 +39,5 @@
             gap: 2rem;
         }
     }
+}
 </style>

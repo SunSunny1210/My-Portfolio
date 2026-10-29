@@ -52,6 +52,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
                 li {
                     padding: 1rem;
                     width: 100%;
+                    text-align: start;
                     color: var(--dark-peach);
                     list-style-position: inside;
                     clip-path: inset(0 100% 0 0);

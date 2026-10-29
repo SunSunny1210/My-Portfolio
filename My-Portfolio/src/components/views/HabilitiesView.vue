@@ -86,13 +86,11 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
 <style scoped>
 .habilities {
     .habilities-info {
-        padding-top: 3rem;
-        max-height: fit-content;
         min-height: 0;
         flex: 1;
 
         .habilities-grid {
-            height: 100%;
+            height: fit-content;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;

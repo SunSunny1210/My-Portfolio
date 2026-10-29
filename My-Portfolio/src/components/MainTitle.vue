@@ -55,7 +55,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
         </div>
         <div :class="{ show }" class="up flex-center-column" @pointerdown="startDrag">
             <span>^</span>
-            <p>Drag up to see more</p>
+            <span>Drag up to see more</span>
         </div>
     </div>
 </template>
@@ -97,7 +97,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
         opacity: 0;
         transition: opacity 0.5s linear 2s;
         
-        span, p {
+        span {
             color: var(--main-pink);
         }
 

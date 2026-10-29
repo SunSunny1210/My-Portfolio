@@ -26,9 +26,9 @@ function goBack () {
         <h2 class="beige-title">My Biggest Project</h2>
         <div class="project-views flex-center-column">
             <div class="index-arrows flex-center">
-                <button :disabled="currentIndex <= 1" @click="goBack">&#9668;</button>
+                <button :disabled="currentIndex <= 1" @click="goBack" id="left"> </button>
                 <span>{{ currentIndex }} / {{ projectRoutes.length }}</span>
-                <button :disabled="currentIndex === projectRoutes.length" @click="router.push(projectRoutes[currentIndex])">&#9658;</button>
+                <button :disabled="currentIndex === projectRoutes.length" @click="router.push(projectRoutes[currentIndex])" id="right"> </button>
             </div>
             <RouterView v-slot="{ Component }">
                 <Transition :name="isBack ? 'back' : 'slide'" mode="out-in">
@@ -46,6 +46,7 @@ function goBack () {
 
 .project-views {
     width: 60vw;
+    gap: 2vh;
     flex: 1;
 
     h3 {
@@ -53,12 +54,22 @@ function goBack () {
     }
 
     .index-arrows {
+        width: 10vw;
         gap: 0.5rem;
         
         button {
-            color: var(--dark-peach);
-            background-color: transparent;
+            height: 50%;
+            background-color: var(--dark-peach);
             border: none;
+            flex: 0.3;
+
+            &#left {
+                clip-path: polygon(0 50%, 100% 0, 100% 100%);
+            }
+
+            &#right {
+                clip-path: polygon(0 0, 100% 50%, 0 100%);
+            }
         }
         
         span {
@@ -138,6 +149,22 @@ function goBack () {
     }
     100% {
         transform: skewX(10deg) translateX(100%);
+    }
+}
+
+@media (max-width: 450px) {
+    .project-views {
+        width: 90vw;
+
+        .index-arrows {
+            max-height: fit-content;
+            width: 30vw;
+            flex: 1;
+
+            button {
+                height: 100%;
+            }
+        }
     }
 }
 </style>

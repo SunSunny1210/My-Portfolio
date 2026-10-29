@@ -22,7 +22,7 @@ function onOptionClick() {
         <div class="options flex-center-column">
             <RouterLink @click="onOptionClick" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
         </div>
-        <div class="shadow"></div>
+        <div @click="emit('close', false)" class="shadow"></div>
     </div>
 </template>
 
@@ -57,7 +57,7 @@ function onOptionClick() {
             
             &:hover {
                 background-color: var(--dark-pink);
-                box-shadow: 0 0 0 10px var(--dark-pink);
+                box-shadow: 0 0 0 1vh var(--dark-pink);
             }
         }
     }
@@ -93,10 +93,10 @@ function onOptionClick() {
                 top: 0;
                 left: 0;
                 height: 100%;
-                width: 100vw;
+                width: 0%;
                 background-color: rgba(92, 37, 37, 0.437);
                 box-shadow: 0 0 0 100vmax rgba(92, 37, 37, 0.437);
-                transition: opacity 0.5s ease-in-out;
+                transition: opacity 0.5s ease-in-out, width 0.5s ease-in-out;
                 opacity: 0;
                 z-index: 0;
             }
@@ -110,6 +110,7 @@ function onOptionClick() {
 
         &.open {
             .shadow {
+                width: 100vw;
                 opacity: 1;
             }
         }
