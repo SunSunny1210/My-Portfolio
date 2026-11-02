@@ -4,10 +4,11 @@ import Options from '../Options.vue';
 
 const isDone = ref(false);
 const open = ref(false);
-const isShort = ref(window.innerWidth);
+const isThin = ref(false);
 
 function updateWidth() {
-    isShort.value = window.innerWidth;
+    if (window.innerHeight > window.innerWidth) isThin.value = true;
+    else isThin.value = false;
 }
 
 onMounted(() => {
@@ -21,7 +22,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
     <div class="main-view">
         <Options :open="open" @is-done="(v) => isDone = v" @close="(v) => open = v" :is-done="isDone"/>
         <RouterView v-slot="{ Component }">
-            <div v-if="isShort < 650" @click="open = !open" :class="{ open }" class="menu flex-center-column">
+            <div v-if="isThin" @click="open = !open" :class="{ open }" class="menu flex-center-column">
                 <hr id="one"/>
                 <hr id="two"/>
                 <hr id="three"/>
@@ -123,7 +124,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .main-view {
         .menu {
             hr {

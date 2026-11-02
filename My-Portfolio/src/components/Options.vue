@@ -38,7 +38,7 @@ function onOptionClick() {
     z-index: 9;
     
     .options {
-        padding: 3rem;
+        padding: 3vw;
         height: 100%;
         width: 40%;
         gap: 5vh;
@@ -46,7 +46,7 @@ function onOptionClick() {
         z-index: 1;
     
         .option {
-            padding: 1rem;
+            padding: 1vh;
             min-height: 0;
             width: 100%;
             text-decoration: none;
@@ -71,7 +71,7 @@ function onOptionClick() {
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .options-view {
         .options {
             padding: 2rem;
@@ -115,16 +115,16 @@ function onOptionClick() {
             }
         }
     }
-}
 
-@media (max-width: 650px) {
-    .options-view {
-        &.shrink {
-            transform: translateX(-100%);
-        }
-
-        &.open {
-            transform: translateX(0);
+    @media (max-width: 650px) {
+        .options-view {
+            &.shrink {
+                transform: translateX(-100%);
+            }
+    
+            &.open {
+                transform: translateX(0);
+            }
         }
     }
 }

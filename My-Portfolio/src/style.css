@@ -15,6 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  scrollbar-color: var(--beige) var(--peach);
 }
 
 body, #app {
@@ -94,7 +95,7 @@ img {
   align-items: center;
 }
 
-@media (max-width: 650px) {
+@media (orientation: portrait) {
   .pink-main, .beige-main {
     width: 100%;
   }
@@ -111,7 +112,6 @@ img {
   p {
     padding: 0 10px;
     overflow-y: scroll;
-    scrollbar-color: var(--beige) var(--peach);
   }
 }
 

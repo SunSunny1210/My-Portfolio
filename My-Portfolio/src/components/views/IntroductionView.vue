@@ -43,6 +43,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
             padding: 3vh 2vw;
             background-color: var(--peach);
             border: 1rem double var(--beige);
+            overflow-y: scroll;
 
             .img-back {
                 margin-right: 2vw;
@@ -99,8 +100,10 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
     }
 }
 
-@media (max-width: 700px) {
+@media (orientation: portrait) {
     .introduction {
+        justify-content: space-between;
+
         .info {
             .info-content {
                 padding: 1rem;
@@ -125,6 +128,35 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                     dl {
                         dt {
                             padding: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (orientation: landscape) and (max-height: 420px) {
+    .introduction {
+        justify-content: space-between;
+
+        .info {
+            max-height: 70vh;
+
+            .info-content {
+                height: 100%;
+            }
+        }
+    }
+    
+    @media (max-width: 664px) {
+        .introduction {
+            .info {
+                .info-content {
+                    .info-data {
+                        align-items: center;
+                
+                        dl {
+                            flex-direction: column;
                         }
                     }
                 }
