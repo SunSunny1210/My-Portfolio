@@ -43,7 +43,6 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
             padding: 3vh 2vw;
             background-color: var(--peach);
             border: 1rem double var(--beige);
-            overflow-y: scroll;
 
             .img-back {
                 margin-right: 2vw;
@@ -135,7 +134,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
         }
     }
 }
-@media (orientation: landscape) and (max-height: 420px) {
+@media (orientation: landscape) and (max-height: 500px) {
     .introduction {
         justify-content: space-between;
 
@@ -144,20 +143,21 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
 
             .info-content {
                 height: 100%;
+                overflow-y: scroll;
             }
         }
     }
-    
-    @media (max-width: 664px) {
-        .introduction {
-            .info {
-                .info-content {
-                    .info-data {
-                        align-items: center;
-                
-                        dl {
-                            flex-direction: column;
-                        }
+}
+
+@media (orientation: landscape) and (max-width: 664px) {
+    .introduction {
+        .info {
+            .info-content {
+                .info-data {
+                    align-items: center;
+            
+                    dl {
+                        flex-direction: column;
                     }
                 }
             }

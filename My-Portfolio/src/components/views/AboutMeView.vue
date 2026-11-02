@@ -120,4 +120,19 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
         rotate: 5deg;
     }
 }
+
+@media (orientation: landscape) and (max-height: 429px) {
+    .about-me {
+        justify-content: space-between;
+
+        .about-info {
+            max-height: 70vh;
+            
+            .info {
+                overflow-y: scroll;
+                height: 100%;
+            }
+        }
+    }
+}
 </style>
