@@ -163,7 +163,7 @@ onMounted(() => setTimeout(() => {
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .contact {
         .contact-info {
             .links {
@@ -182,6 +182,38 @@ onMounted(() => setTimeout(() => {
                         margin-left: 2vw;
                         width: calc(15rem + 2vw);
                     } 
+                } 
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    .contact {
+        justify-content: space-between;
+
+        .contact-info {
+            max-height: 70vh;
+
+            .links {
+                height: 100%;
+
+                .link {
+                    padding: 1vh;
+
+                    .img-back {
+                        img {
+                            width: 3vw;
+                        }
+                    }
+                }
+
+                &.left {
+                    transform: translateX(-20vw);
+
+                    .link p {
+                        width: 40vw;
+                    }
                 } 
             }
         }
