@@ -40,7 +40,7 @@ h2 {
 h3 {
   color: white;
   text-decoration: underline solid white;
-  text-underline-offset: 0.5rem;
+  text-underline-offset: 1vh;
   font-size: clamp(1rem, 0.8rem + 2vw, 3rem);
 }
 

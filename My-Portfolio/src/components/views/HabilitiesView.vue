@@ -100,7 +100,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
             "skills coding";
 
             .hability-cell {
-                padding: 2vw;
+                padding: 2vh 2vw;
                 min-height: 0;
                 min-width: 0;
                 background-color: var(--main-pink);
@@ -249,27 +249,61 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .habilities {
         .habilities-info {
             .habilities-grid {
                 .hability-cell {
                     ul {
                         li {
-                            padding: 3vw;
+                            padding: 1vh 2vw;
                         }
                     }
                 }
 
-            #coding {
-                .icons {
-                    img {
-                        width: 7vw;
+                #coding {
+                    .icons {
+                        img {
+                            width: 7vw;
+                        }
                     }
                 }
             }
         }
     }
 }
+
+@media (orientation: landscape) {
+    .habilities {
+        justify-content: space-between;
+
+        .habilities-info {
+            max-height: 70vh;
+
+            .habilities-grid {
+                height: 100%;
+
+                .hability-cell {
+                    overflow-y: scroll;
+                    
+                    ul {
+                        justify-content: flex-start;
+                    }
+                }
+
+                #coding {
+                    .icons {
+                        gap: 0.5vw;
+                    }
+                    
+                    @media (max-height: 414px) {
+                        h3 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 </style>
