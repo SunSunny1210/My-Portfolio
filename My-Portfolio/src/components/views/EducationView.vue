@@ -13,7 +13,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
 <template>
     <div :class="{ open }" class="education beige-main flex-center-column">
         <h2 class="beige-title">Education</h2>
-        <div class="education-info flex-center-column">
+        <div class="education-info flex-center">
             <ul class="info flex-center-column">
                 <div :class="{ animate }" class="li-back first">
                     <li :class="{ animate }" class="first">ESO: Institut Pedraforca, 2013-2017</li>
@@ -36,9 +36,9 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
         flex: 1;
         
         .info {
-            padding: 2rem;
+            padding: 2vh;
             width: 100%;
-            gap: 1rem;
+            gap: 1vh;
             background-color: var(--peach);
             border: 1rem double var(--beige);
 
@@ -50,7 +50,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
                 border: 1rem double var(--peach);
 
                 li {
-                    padding: 1rem;
+                    padding: 2vh 2vw;
                     width: 100%;
                     text-align: start;
                     color: var(--dark-peach);
@@ -87,6 +87,16 @@ onMounted(() => setTimeout(() => animate.value = true, 600))
                     transition-delay: 0.6s;
                 }
             }
+        }
+    }
+}
+
+@media (orientation: landscape) and (max-height: 350px) {
+    .education {
+        justify-content: space-between;
+
+        .education-info {
+            max-height: 70vh;
         }
     }
 }
