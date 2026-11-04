@@ -114,6 +114,11 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
             padding: 1rem;
             border: 1rem solid white;
             box-shadow: 0 0 0 1rem var(--main-pink);
+
+            h2 {
+                line-height: 5vh;
+                text-underline-offset: 0.5vh;
+            }
         }
     }
 }

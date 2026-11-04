@@ -127,7 +127,7 @@
                 align-items: flex-end;
     
                 img {
-                    height: 70%;
+                    height: 80%;
                 }
             }
         }

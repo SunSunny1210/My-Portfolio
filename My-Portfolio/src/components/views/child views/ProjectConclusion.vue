@@ -33,7 +33,7 @@
             min-height: 0;
             height: 100%;
             justify-content: space-around;
-            gap: 2vh;
+            gap: 3vh;
 
             .img-back {   
                 padding: 1vh; 

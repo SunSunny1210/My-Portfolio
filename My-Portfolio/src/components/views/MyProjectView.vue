@@ -170,6 +170,8 @@ function goBack () {
 
 @media (orientation: landscape) and (max-height: 564px) {
     .my-project {
+        gap: 3vh;
+
         h2 {
             font-size: calc(1rem + 1vw);
             line-height: 12vh;

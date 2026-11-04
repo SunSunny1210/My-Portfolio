@@ -37,7 +37,7 @@
         
         .title-and-text { 
             height: 100%;
-            gap: 2rem;
+            gap: 4vh;
         }
     }
 }
