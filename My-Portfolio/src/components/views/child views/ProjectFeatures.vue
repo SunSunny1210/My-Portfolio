@@ -24,10 +24,10 @@
 <style scoped>
 .project-features {
     height: 60vh;
-    gap: 1rem;
+    gap: 1vh;
 
     h3 {
-        padding: 0.5rem 1rem 1rem;
+        padding: 1vh 2vw 2vh;
         background-color: var(--peach);
         border: 1rem double var(--beige);
     }
@@ -37,6 +37,7 @@
 
         ul {
             min-height: 0;
+            height: 100%;
 
             li {
                 text-align: start;
@@ -53,11 +54,14 @@
             color: white;
             background-color: var(--peach);
             border: 1rem double var(--beige);
+            flex: 1;
         }
 
         .img-middle {
             padding: 1rem;
             height: 100%;
+            width: 50%;
+            flex: 1;
 
             img {
                 aspect-ratio: 0;
@@ -69,7 +73,7 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .project-features {
         width: 100%;
         
@@ -103,6 +107,31 @@
             left: 50%;
             aspect-ratio: 1 / 2;
         }
+    }
+}
+
+@media (orientation: landscape) and (max-height: 460px) {
+    .project-features {
+        position: relative;
+
+        h3 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            translate: -50%;
+            font-size: 1rem;
+        }
+
+        .features {
+            .img-middle {
+                align-items: flex-end;
+    
+                img {
+                    height: 70%;
+                }
+            }
+        }
+
     }
 }
 </style>

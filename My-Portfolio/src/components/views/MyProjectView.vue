@@ -152,17 +152,37 @@ function goBack () {
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .project-views {
         width: 90vw;
 
         .index-arrows {
             max-height: fit-content;
-            width: 30vw;
+            width: 25vw;
             flex: 1;
 
             button {
-                height: 100%;
+                height: 70%;
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) and (max-height: 564px) {
+    .my-project {
+        h2 {
+            font-size: calc(1rem + 1vw);
+            line-height: 12vh;
+            text-underline-offset: 0.5rem;
+        }
+
+        .project-views {
+            .index-arrows {
+                width: 15vw;
+
+                span {
+                    font-size: 1rem;
+                }
             }
         }
     }

@@ -21,6 +21,7 @@
     .intro-info {
         padding: 1rem;
         height: 100%;
+        gap: 2vw;
         justify-content: space-around;
         background-color: var(--peach);
         border: 1rem double var(--beige);
