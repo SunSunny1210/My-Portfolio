@@ -34,7 +34,7 @@ function onDrag(e) {
 function stopDrag() {
     dragging = false;
 
-    if (offsetY.value < -window.innerHeight / 2) offsetY.value = -window.innerHeight * 2;
+    if (offsetY.value < -window.innerHeight / 2) offsetY.value = -window.innerHeight * 3;
     else offsetY.value = 0;
     
     window.removeEventListener('pointermove', onDrag);

@@ -54,13 +54,14 @@ function goBack () {
     }
 
     .index-arrows {
-        width: 10vw;
+        width: fit-content;
         gap: 0.5rem;
         
         button {
             height: 50%;
             background-color: var(--dark-peach);
             border: none;
+            aspect-ratio: 1;
             flex: 0.3;
 
             &#left {
@@ -158,8 +159,11 @@ function goBack () {
 
         .index-arrows {
             max-height: fit-content;
-            width: 25vw;
             flex: 1;
+
+            span {
+                font-size: calc(0.8rem + 1vw);
+            }
 
             button {
                 height: 70%;
@@ -180,8 +184,6 @@ function goBack () {
 
         .project-views {
             .index-arrows {
-                width: 15vw;
-
                 span {
                     font-size: 1rem;
                 }
