@@ -68,7 +68,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
     height: 100%;
     width: 100%;
     display: flex;
-    gap: 2rem;
+    gap: 10vh;
     background-color: white;
     transition: transform 0.3s ease;
     touch-action: none;
@@ -77,12 +77,12 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
     z-index: 10;
     
     .titles {
-        margin: 2rem;
-        padding: 2rem;
+        margin: 2vh 2vw;
+        padding: 3vh 3vw 6vh;
         color: beige;
         background-color: var(--main-pink);
-        border: 1.8rem solid white;
-        box-shadow: 0 0 0 2rem var(--main-pink);
+        border: 2vw solid white;
+        box-shadow: 0 0 0 2vw var(--main-pink);
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
         
@@ -107,7 +107,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
     }
 }
 
-@media (max-width: 450px) {
+@media (orientation: portrait) {
     .main-title {
         .titles {
             margin: 1rem;
