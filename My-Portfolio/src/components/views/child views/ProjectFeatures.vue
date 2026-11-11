@@ -46,7 +46,7 @@
         }
         
         .first-half, .second-half {
-            padding: 2vh;
+            padding: 2vh 1vw;
             height: 100%;
             align-items: flex-start;
             gap: 1rem;
@@ -66,14 +66,13 @@
             img {
                 aspect-ratio: 0;
                 min-height: 0;
-                height: 90%;
                 width: 100%;
             }
         }
     }
 }
 
-@media (orientation: portrait) {
+@media (max-width: 580px) {
     .project-features {
         width: 100%;
         
@@ -87,7 +86,13 @@
                 width: 100%;
 
                 li {
-                    font-size: calc(0.3rem + 1vh);
+                    font-size: calc(0.3rem + 1vw);
+                }
+
+                @media (min-width: 1024px) {
+                    li {
+                        font-size: calc(1.2rem + 1vw);
+                    }
                 }
             }
 
@@ -118,8 +123,11 @@
             position: absolute;
             top: 0;
             left: 50%;
-            translate: -50%;
             font-size: 1rem;
+            
+            @media (min-width: 581px) {
+                translate: -50%;
+            }
         }
 
         .features {

@@ -35,7 +35,7 @@ const languages = [
 const isShort = ref(false);
 
 function updateHeight() {
-   if (window.innerHeight <= 950 & window.innerWidth > 600) isShort.value = true;
+   if (window.innerHeight <= 950) isShort.value = true;
    else isShort.value = false;
 }
 
@@ -85,12 +85,16 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
 
 <style scoped>
 .habilities {
+    justify-content: space-between;
+    gap: 5vh;
+
     .habilities-info {
         min-height: 0;
+        max-height: 80vh;
         flex: 1;
 
         .habilities-grid {
-            height: fit-content;
+            height: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;
@@ -106,13 +110,14 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                 background-color: var(--main-pink);
                 border: 1rem double var(--soft-pink);
                 gap: 2vh;
+                overflow-y: auto;
 
                 ul {
                     min-height: 0;
                     width: 100%;
                     
                     li {
-                        padding: 1rem;
+                        padding: 1vh 1vw;
                         min-height: 0;
                         width: 100%;
                         gap: 1vw;
@@ -234,7 +239,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     }
 }
 
-@media (min-width: 600px) and (max-height: 950px) {
+@media (max-height: 950px) {
     #languages {
         ul {
             li {
@@ -249,7 +254,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 650px) {
     .habilities {
         .habilities-info {
             .habilities-grid {
@@ -273,21 +278,17 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-height: 700px) {
     .habilities {
-        justify-content: space-between;
-
         .habilities-info {
-            max-height: 70vh;
-
             .habilities-grid {
-                height: 100%;
-
                 .hability-cell {
-                    overflow-y: scroll;
-                    
                     ul {
                         justify-content: flex-start;
+
+                        li {
+                            padding: calc(1rem + 0.3vw);
+                        }
                     }
                 }
 
@@ -296,7 +297,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                         gap: 0.5vw;
                     }
                     
-                    @media (max-height: 414px) {
+                    @media (max-height: 589px) {
                         h3 {
                             display: none;
                         }

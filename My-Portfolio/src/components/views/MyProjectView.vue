@@ -153,7 +153,7 @@ function goBack () {
     }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 650px) {
     .project-views {
         width: 90vw;
 

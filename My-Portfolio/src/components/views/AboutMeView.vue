@@ -48,6 +48,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
             padding: 2vw;
             background-color: var(--dark-pink);
             border: 1rem double var(--soft-pink);
+            overflow-y: auto;
             
             .img-magic {
                 position: relative;
@@ -129,7 +130,6 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
             max-height: 70vh;
             
             .info {
-                overflow-y: scroll;
                 height: 100%;
             }
         }

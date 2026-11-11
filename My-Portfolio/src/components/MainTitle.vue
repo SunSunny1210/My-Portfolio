@@ -79,6 +79,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
     .titles {
         margin: 2vh 2vw;
         padding: 3vh 3vw 6vh;
+        max-width: 50vw;
         color: beige;
         background-color: var(--main-pink);
         border: 2vw solid white;
@@ -86,9 +87,9 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
         
-            &.show {
-                opacity: 1;
-            }
+        &.show {
+            opacity: 1;
+        }
     }
 
     .up {
@@ -112,12 +113,34 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
         .titles {
             margin: 1rem;
             padding: 1rem;
+            max-width: 70vw;
+            width: 70vw;
             border: 1rem solid white;
             box-shadow: 0 0 0 1rem var(--main-pink);
 
             h2 {
                 line-height: 5vh;
                 text-underline-offset: 0.5vh;
+            }
+        }
+    }
+}
+
+@media (min-width: 370px) and (max-width: 960px) {
+    .main-title {
+        .titles {
+            h2 {
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+@media (max-height: 550px) {
+    .main-title {
+        .titles {
+            h2 {
+                line-height: 10vh;
             }
         }
     }

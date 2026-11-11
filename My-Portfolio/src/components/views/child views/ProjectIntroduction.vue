@@ -27,7 +27,7 @@
         border: 1rem double var(--beige);
 
         .img-back {
-            height: 100%;
+            height: 90%;
             
             img {
                 height: 100%;

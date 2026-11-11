@@ -69,7 +69,6 @@ onMounted(() => setTimeout(() => {
         flex: 1;
 
         .links {
-            width: 100%;
             transform: translateX(0);
             transition: transform 0.5s ease-in-out;
             
@@ -163,7 +162,7 @@ onMounted(() => setTimeout(() => {
     }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 500px) {
     .contact {
         .contact-info {
             .links {
@@ -190,7 +189,11 @@ onMounted(() => setTimeout(() => {
 
 @media (orientation: landscape) {
     .contact {
-        justify-content: space-between;
+        justify-content: center;
+
+        @media (max-height: 525px) {
+            justify-content: space-between;    
+        }
 
         .contact-info {
             max-height: 70vh;
@@ -202,8 +205,10 @@ onMounted(() => setTimeout(() => {
                     padding: 1vh;
 
                     .img-back {
-                        img {
-                            width: 3vw;
+                        @media (max-height: 425px) {
+                            img {
+                                width: 3vw;
+                            }  
                         }
                     }
                 }

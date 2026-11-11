@@ -48,7 +48,7 @@ function onOptionClick() {
         .option {
             padding: 1vh;
             min-height: 0;
-            width: 100%;
+            width: 90%;
             text-decoration: none;
             color: white;
             background-color: var(--main-pink);
