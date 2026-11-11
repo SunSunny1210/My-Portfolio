@@ -7,8 +7,10 @@ const open = ref(false);
 const isThin = ref(false);
 
 function updateWidth() {
-    if (window.innerHeight > window.innerWidth) isThin.value = true;
-    else isThin.value = false;
+    if (window.innerHeight > window.innerWidth && window.innerWidth <= 650) isThin.value = true;
+    else if (window.innerHeight > window.innerWidth && window.innerWidth > 650) {
+        open.value = false;
+    } else isThin.value = false;
 }
 
 onMounted(() => {
@@ -20,7 +22,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
 
 <template>
     <div class="main-view">
-        <Options :open="open" @is-done="(v) => isDone = v" @close="(v) => open = v" :is-done="isDone"/>
+        <Options :open="open" :is-done="isDone" @is-done="(v) => isDone = v" @close="(v) => open = v"/>
         <RouterView v-slot="{ Component }">
             <div v-if="isThin" @click="open = !open" :class="{ open }" class="menu flex-center-column">
                 <hr id="one"/>

@@ -85,8 +85,6 @@ function onOptionClick() {
         }
 
         &.shrink {
-            width: 40%;
-
             .shadow {
                 content: " ";
                 position: absolute;
@@ -104,7 +102,7 @@ function onOptionClick() {
 
         &.isDone {
             .option {
-                font-size: 0.7rem;
+                font-size: calc(0.6rem + 0.5vw);
             }
         }
 
@@ -119,6 +117,7 @@ function onOptionClick() {
     @media (max-width: 650px) {
         .options-view {
             &.shrink {
+                width: 40%;
                 transform: translateX(-100%);
             }
     

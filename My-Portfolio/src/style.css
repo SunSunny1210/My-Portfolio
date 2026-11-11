@@ -34,7 +34,7 @@ h2 {
   line-height: 7vh;
   color: white;
   text-decoration: underline double 2px;
-  text-underline-offset: 2vh;
+  text-underline-offset: 1vh;
 }
 
 h3 {
@@ -52,7 +52,7 @@ h3 {
   text-shadow: 5px 5px var(--peach);
 }
 
-p, dl, a {
+p, dl, a, span {
   min-height: 0;
   text-align: justify;
   color: white;
@@ -95,7 +95,7 @@ img {
   align-items: center;
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 650px) {
   .pink-main, .beige-main {
     width: 100%;
   }
@@ -109,7 +109,7 @@ img {
     line-height: 6vh;
   }
   
-  @media (max-height: 800px) {
+  @media (max-height: 1000px) {
     p {
       padding: 0 10px;
       overflow-y: scroll;
