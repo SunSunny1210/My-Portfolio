@@ -109,7 +109,7 @@ onMounted(() => setTimeout(() => {
                     z-index: 1;
 
                     img {
-                        width: 5vw;
+                        width: 4vw;
                     }
                 }
                 
@@ -133,7 +133,7 @@ onMounted(() => setTimeout(() => {
             }
 
             &.left .link p {
-                width: 32vw;
+                width: 35vw;
                 left: 80%;
                 opacity: 1;
             }
@@ -162,21 +162,23 @@ onMounted(() => setTimeout(() => {
     }
 }
 
-@media (orientation: portrait) and (max-width: 500px) {
+@media (orientation: portrait) and (max-width: 635px) {
     .contact {
         .contact-info {
             .links {
                 .link {
                     .img-back {
                         img {
-                            width: 10vw;
+                            @media (max-width: 400px) {
+                                width: 10vw;
+                            }
                         }
                     }
-
                 }
 
                 &.left {
                     transform: translateX(calc((-15rem + 2vw) / 2));
+                    
                    .link p {
                         margin-left: 2vw;
                         width: calc(15rem + 2vw);
@@ -191,7 +193,7 @@ onMounted(() => setTimeout(() => {
     .contact {
         justify-content: center;
 
-        @media (max-height: 525px) {
+        @media (max-height: 525px) and (min-width: 900px) {
             justify-content: space-between;    
         }
 
@@ -203,21 +205,13 @@ onMounted(() => setTimeout(() => {
 
                 .link {
                     padding: 1vh;
-
-                    .img-back {
-                        @media (max-height: 425px) {
-                            img {
-                                width: 3vw;
-                            }  
-                        }
-                    }
                 }
 
                 &.left {
-                    transform: translateX(-20vw);
+                    transform: translateX(-25vw);
 
                     .link p {
-                        width: 40vw;
+                        width: 50vw;
                     }
                 } 
             }
