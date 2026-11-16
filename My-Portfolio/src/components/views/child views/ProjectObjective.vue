@@ -4,7 +4,10 @@
     <div class="project-objective flex-center">
         <div class="objective-info flex-center-column">
             <h3>Objective</h3>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>
+                The main objectives are: Home View, Journal (wiki) and Task Manager.
+                The whole page is inspired in the game's visuals and aesthetics. I tried replicating some things, like the loading screen and the journal visuals and functionality, so it gives kind of the same feeling of playing the game. The HomePage will be just be the main page, the first thing when entering, which will have two states: when logged in and not. If you're not logged in, it will show the default home page, where you can navigate freely through different options and see some suggestions. If you're logged in, it will display your current process on your garden or different gardens, showing how many piñatas you have, your current achievements, etc. The journal will be the wiki, showing all the info the game's journal shows and other extra info I might add, like achievements or tips. The task manager will have different options to have several saves, choose your objectives, check your progress and everything you may need for your own organization.
+            </p>
         </div>
         <div class="objective-imgs">
             <div class="img-back flex-center">

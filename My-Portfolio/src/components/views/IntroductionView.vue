@@ -30,7 +30,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                         </dl>
                     </div>
                 </div>
-                <p :class="{ animate }">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p :class="{ animate }">Welcome to my portfolio! My name is Sol Valentina Montes and this is my portfolio, where I present myself a bit, talk about my personal project and share my info.</p>
             </div>
         </div>
     </div>

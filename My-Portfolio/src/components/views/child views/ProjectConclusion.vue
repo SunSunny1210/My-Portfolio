@@ -6,7 +6,7 @@
             <div class="title flex-center-column">
                 <h3>Conclusion</h3>
                 <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    This project is my own experiment. I decided to make it only in JS, without libraries or frameworks, to be forced to learn everything on its core. That way I can have a deeper understanding of how it works and it will make it easier when learning different code. I try several ways of doing the same thing, so I can test and learn, and probably made a lot of mistakes (which I'll be fixing once I review the code). My intention is to use it as a "battlefield" to try, play and experiment doing something I'm really interested in and I would love to see outside my own work. It might not be perfect, but I'm already really proud of things I achieved, things I thought I wouldn't be able to do. I love it and will always be my little baby ✨.  
                 </p>
             </div>
         </div>

@@ -6,12 +6,12 @@ defineProps({
 })
 
 const skills = [
-    "Yayayayaya",
-    "Yayayayaya",
-    "Yayayayaya",
-    "Yayayayaya",
-    "Yayayayaya",
-    "Yayayayaya"
+    "Team work",
+    "Adaptable",
+    "Dedicated",
+    "Decisive",
+    "Good learner",
+    "Problem solver"
 ]
 
 const languages = [

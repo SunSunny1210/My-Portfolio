@@ -22,12 +22,12 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                         <img class="controller" src="../../assets/Controller.png" alt="Pink Controller">
                     </div>
                     <p :class="{ animate }">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                        I've always been a deep pationate of music and videogames. Those two have always been a must in my life. I studied 12 years of transverse flute and did scenic studies on highschool, since my main goal was to do musical theatre or play in an orchestra. Sadly, due to health reasons, this dream had to become a simple future hobbie. When this dream came to an end, I started looking for other paths, and there's when the videogame love gains the spotlight.
                     </p>
                 </div>
                 <div class="right flex-center">
                     <p :class="{ animate }">
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        I've always felt a bit overwhelmed by the coding world, but my mom suggested me to study a bit of FrontEnd, since she did it too and said it was accessible. It wasn't videogame coding, like my siblings do, but it was a start. At first, I didn't feel very comfortable, but I ended up loving it and now I'm actually thrilled to start in this world. I know it's gonna be hard, but nothing that matters is easy ;).
                     </p>
                     <div :class="{ animate }" class="img-magic">
                         <Sprinkles class="right-sprinkles"/>
