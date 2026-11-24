@@ -14,7 +14,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
     <div :class="{ open }" class="introduction beige-main flex-center-column">
         <h2 class="beige-title">Introduction</h2>
         <div class="info flex-center">
-            <div class="info-content flex-center-column">
+            <div class="info-content flex-center beige-element">
                 <div class="img-and-data flex-center">
                     <div :class="{ animate }" class="img-back">
                         <img src="../../assets/Sunny.jpg" alt="Cute Girl">
@@ -39,29 +39,32 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
 <style scoped>
 .introduction {
     .info {
+        max-height: 80vh;
         flex: 1;
         
         .info-content {
             padding: 3vh 2vw;
-            max-height: 80vh;
+            max-width: 90vw;
             gap: 2vh;
-            background-color: var(--peach);
-            border: 1rem double var(--beige);
             overflow-y: auto;
 
             .img-and-data {
-                gap: 2vw;
+                gap: 1vw;
                 
                 .img-back {
-                    padding: 0.5rem;
+                    height: 20vh;
                     width: fit-content;
                     border: 10px double white;
+                    border-radius: 30px;
                     opacity: 0;
                     transition: opacity 0.5s ease-in-out;
                     
                     img {
-                        height: 20vh;
+                        height: 100%;
+                        aspect-ratio: 0;
+                        border-radius: 20px;
                     }
+                    
                     &.animate {
                         opacity: 1;
                     }
@@ -78,7 +81,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
                         transition: clip-path 0.5s ease-in-out 0.3s;
     
                         dt {
-                            padding: 1vw;
+                            padding: 1vh;
                             color: var(--dark-peach);
                             background-color: var(--beige);
                             border-radius: 12px;
@@ -111,15 +114,21 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
 
         .info {
             .info-content {
+                position: fixed;
+                inset: 0;
+                margin: auto;
                 padding: 1rem;
-                max-height: 80vh;
+                max-height: fit-content;
+                max-width: 90vw;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: column;
 
                 .img-and-data {
-                    @media (max-width: 420px) {
+                    gap: 0;
+
+                    @media (max-width: 450px) {
                         flex-direction: column;
                     }
     

@@ -80,7 +80,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true));
         margin: 2vh 2vw;
         padding: 3vh 3vw 6vh;
         max-width: 50vw;
-        color: beige;
+        color: var(--beige);
         background-color: var(--main-pink);
         border: 2vw solid white;
         box-shadow: 0 0 0 2vw var(--main-pink);

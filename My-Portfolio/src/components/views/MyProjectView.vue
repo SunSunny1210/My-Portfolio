@@ -45,6 +45,7 @@ function goBack () {
 }
 
 .project-views {
+    max-height: 80vh;
     width: 60vw;
     gap: 2vh;
     flex: 1;

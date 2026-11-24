@@ -15,7 +15,7 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
     <div :class="{ open }" class="about-me pink-main flex-center-column">
         <h2 class="pink-title">About Me</h2>
         <div class="about-info flex-center">
-            <div class="info">
+            <div class="info pink-element">
                 <div class="left flex-center">
                     <div :class="{ animate }" class="img-magic">
                         <Sprinkles class="left-sprinkles"/>
@@ -46,8 +46,6 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
         
         .info {
             padding: 2vw;
-            background-color: var(--dark-pink);
-            border: 1rem double var(--soft-pink);
             overflow-y: auto;
             
             .img-magic {
@@ -119,6 +117,20 @@ onMounted(() => setTimeout(() => animate.value = true, 600));
     }
     to {
         rotate: 5deg;
+    }
+}
+
+@media (orientation: portrait) {
+    .about-me {
+        .about-info {
+            .info {
+                position: fixed;
+                inset: 0;
+                margin: auto;
+                max-height: 70vh;
+                max-width: 90vw;
+            }
+        }
     }
 }
 

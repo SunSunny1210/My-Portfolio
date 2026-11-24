@@ -2,9 +2,9 @@
 
 <template>
     <div class="project-features flex-center-column">
-        <h3>Features</h3>
+        <h3 class="beige-element">Features</h3>
         <div class="features flex-center">
-            <ul class="first-half flex-center-column">
+            <ul class="first-half flex-center-column beige-element">
                 <li>Complete wiki.</li>
                 <li>Interactive task manager.</li>
                 <li>Different farms management.</li>
@@ -12,7 +12,7 @@
             <div class="img-middle flex-center">
                 <img src="../../../assets/Galagoogoo.png" alt="Galagoogoo">
             </div>
-            <ul class="second-half flex-center-column">
+            <ul class="second-half flex-center-column beige-element">
                 <li>Task planning tool.</li>
                 <li>Achievement tracking.</li>
                 <li>Customized suggestions.</li>
@@ -28,8 +28,6 @@
 
     h3 {
         padding: 1vh 2vw 2vh;
-        background-color: var(--peach);
-        border: 1rem double var(--beige);
     }
     
     .features {
@@ -46,14 +44,12 @@
         }
         
         .first-half, .second-half {
-            padding: 2vh 1vw;
+            padding: 2vh 2vw;
             height: 100%;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1vh;
             list-style-position: inside;
             color: white;
-            background-color: var(--peach);
-            border: 1rem double var(--beige);
             flex: 1;
         }
 
@@ -72,7 +68,7 @@
     }
 }
 
-@media (max-width: 580px) {
+@media (orientation: portrait) {
     .project-features {
         width: 100%;
         
@@ -80,29 +76,32 @@
             position: relative;
             padding-right: 50%;
             height: 100%;
+            width: 100%;
             flex-direction: column;
 
             ul {
                 width: 100%;
 
                 li {
-                    font-size: calc(0.3rem + 1vw);
+                    font-size: calc(0.5rem + 0.5vh + 0.5vw);
                 }
 
-                @media (min-width: 1024px) {
+                @media (min-width: 400px) and (min-height: 670px) {
                     li {
-                        font-size: calc(1.2rem + 1vw);
+                        font-size: calc(0.5rem + 0.8vh + 1vw);
                     }
                 }
             }
 
             .first-half {
                 border-bottom: 0;
+                border-radius: 30px 30px 0 0;
             }
 
             .second-half {
                 padding-top: 0;
                 border-top: 0;
+                border-radius: 0 0 30px 30px;
             }
         }
 

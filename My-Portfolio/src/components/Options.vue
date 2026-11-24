@@ -43,7 +43,7 @@ function onOptionClick() {
         padding: 2vw;
         height: 100%;
         width: 40%;
-        gap: 2vh;
+        gap: 1vh;
         background-color: var(--main-pink);
         transition: width 0.4s ease-in-out;
         z-index: 2;
@@ -59,7 +59,7 @@ function onOptionClick() {
     
         .option {
             position: relative;
-            padding: 1vh;
+            padding: 2vh 2vw;
             min-height: 0;
             width: 90%;
             text-decoration: none;
@@ -111,7 +111,7 @@ function onOptionClick() {
 
                 &:focus {
                     outline: none;
-                    
+
                     &::after {
                         clip-path: inset(0 100% 0 0);
                     }

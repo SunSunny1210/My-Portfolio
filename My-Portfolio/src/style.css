@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
 :root {
   --main-pink: rgb(255, 158, 158);
@@ -14,6 +13,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Dongle", sans-serif;
   text-align: center;
   scrollbar-color: white transparent;
 }
@@ -24,13 +24,13 @@ body, #app {
 }
 
 h1 {
-  font-size: clamp(2rem, 1rem + 3vw, 7rem);
+  font-size: clamp(2rem, 1.5rem + 3vw, 7rem);
 }
 
 h2 {
-  font-size: clamp(1rem, 1rem + 2vw, 4rem);
+  font-size: clamp(1rem, 1.5rem + 2vw, 4rem);
   font-style: oblique;
-  letter-spacing: 3vw;
+  letter-spacing: 2vw;
   line-height: 7vh;
   color: white;
   text-decoration: underline double 2px;
@@ -41,7 +41,7 @@ h3 {
   color: white;
   text-decoration: underline solid white;
   text-underline-offset: 1vh;
-  font-size: clamp(1rem, 0.8rem + 2vw, 3rem);
+  font-size: clamp(1rem, 1.2rem + 2vw, 3rem);
 }
 
 .pink-title {
@@ -49,19 +49,32 @@ h3 {
 }
 
 .beige-title {
-  text-shadow: 5px 5px var(--peach);
+  text-shadow: 3px 3px var(--peach);
+}
+
+.pink-element {
+  background-color: var(--dark-pink);
+  border: 1rem double var(--soft-pink);
+  border-radius: 30px;
+}
+
+.beige-element {
+  background-color: var(--peach);
+  border: 1rem double var(--beige);
+  border-radius: 30px;
 }
 
 p, dl, a, span {
   min-height: 0;
   text-align: justify;
   color: white;
-  font-size: clamp(1rem, 0.5rem + 1.2vw, 2rem);
+  font-size: clamp(0.8rem, 1rem + 1.2vw, 2rem);
+  line-height: 3vh;
 }
 
-p {
+.text {
+  padding-right: 1vw;
   overflow-y: auto;
-
 }
 
 li {

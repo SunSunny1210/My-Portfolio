@@ -11,7 +11,7 @@ const skills = [
     "Dedicated",
     "Decisive",
     "Good learner",
-    "Problem solver"
+    "Resolute"
 ]
 
 const languages = [
@@ -35,7 +35,7 @@ const languages = [
 const isShort = ref(false);
 
 function updateHeight() {
-   if (window.innerHeight <= 950) isShort.value = true;
+   if (window.innerHeight <= 850) isShort.value = true;
    else isShort.value = false;
 }
 
@@ -52,24 +52,24 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
         <h2 class="pink-title">Habilities</h2>
         <div class="habilities-info flex-center">
             <div class="habilities-grid">
-                <div class="hability-cell flex-center-column" id="skills">
+                <div class="hability-cell flex-center-column pink-element" id="skills">
                     <h3>Skills</h3>
                     <ul class="flex-center-column">
-                        <li class="skill flex-center" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">
+                        <li class="skill flex-center pink-element" v-for="(skill, i) in skills" :key="i" :style="{'--chars': skill.length, '--delay': `${i * 0.5}s`}">
                             <span>{{ skill }}</span>
                         </li>
                     </ul>
                 </div>
-                <div class="hability-cell flex-center-column" id="languages">
+                <div class="hability-cell flex-center-column pink-element" id="languages">
                     <h3>Languages</h3>
                     <ul class="flex-center-column">
-                        <li v-for="language in languages" class="flex-center-column">
+                        <li v-for="language in languages" class="flex-center-column pink-element">
                             <span>{{ isShort ? language.short : language.name }}</span>
                             <div :class="language.progress" class="progress"></div>
                         </li>
                     </ul>
                 </div>
-                <div class="hability-cell flex-center-column" id="coding">
+                <div class="hability-cell flex-center-column pink-element" id="coding">
                     <h3>Coding</h3>
                     <div class="icons flex-center">
                         <img class="first" src="../../assets/HTML.png" alt="HTML 5 Icon">
@@ -94,7 +94,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
         flex: 1;
 
         .habilities-grid {
-            height: 100%;
+            max-width: fit-content;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;
@@ -108,7 +108,6 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                 min-height: 0;
                 min-width: 0;
                 background-color: var(--main-pink);
-                border: 1rem double var(--soft-pink);
                 gap: 2vh;
                 overflow-y: auto;
 
@@ -123,7 +122,6 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
                         gap: 1vw;
                         text-align: center;
                         color: white;
-                        background-color: var(--dark-pink);
                         border: 1rem double var(--main-pink);
                         list-style: none;
 
@@ -239,7 +237,7 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     }
 }
 
-@media (max-height: 950px) {
+@media (max-height: 850px) {
     #languages {
         ul {
             li {
@@ -258,6 +256,11 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     .habilities {
         .habilities-info {
             .habilities-grid {
+                position: fixed;
+                inset: 0;
+                margin: auto;
+                max-height: 70vh;
+
                 .hability-cell {
                     ul {
                         li {
@@ -282,6 +285,8 @@ onUnmounted(() => window.removeEventListener('resize', updateHeight));
     .habilities {
         .habilities-info {
             .habilities-grid {
+                height: 100%;
+
                 .hability-cell {
                     ul {
                         justify-content: flex-start;

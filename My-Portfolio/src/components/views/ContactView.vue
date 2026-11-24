@@ -65,6 +65,7 @@ onMounted(() => setTimeout(() => {
 <style scoped>
 .contact {
     .contact-info {
+        max-height: 80vh;
         width: 100%;
         flex: 1;
 
@@ -106,10 +107,19 @@ onMounted(() => setTimeout(() => {
                         var(--soft-pink) 80% 100%
                     );
                     border-radius: 50%;
+                    transition: scale 0.3s ease-in-out;
                     z-index: 1;
 
                     img {
                         width: 4vw;
+                    }
+
+                    &:hover {
+                        scale: 1.2;
+
+                        .left & {
+                            scale: 1;
+                        }
                     }
                 }
                 
@@ -166,10 +176,16 @@ onMounted(() => setTimeout(() => {
     .contact {
         .contact-info {
             .links {
+                position: fixed;
+                inset: 0;
+                margin: auto;
+                max-height: fit-content;
+                max-width: fit-content;
+
                 .link {
                     .img-back {
                         img {
-                            @media (max-width: 400px) {
+                            @media (max-width: 450px) {
                                 width: 10vw;
                             }
                         }
@@ -191,15 +207,11 @@ onMounted(() => setTimeout(() => {
 
 @media (orientation: landscape) {
     .contact {
-        justify-content: center;
-
         @media (max-height: 525px) and (min-width: 900px) {
             justify-content: space-between;    
         }
 
         .contact-info {
-            max-height: 70vh;
-
             .links {
                 height: 100%;
 
