@@ -58,7 +58,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
             left: 0;
             height: 7px;
             width: 100%;
-            background-color: white;
+            background-color: var(--main-pink);
             border: none;
             transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, translate 0.5s ease-in-out, top 0.5s ease-in-out;
 
@@ -78,7 +78,7 @@ onUnmounted(() => window.removeEventListener('resize', updateWidth));
 
         &.open {
             hr {
-                background-color: var(--soft-pink);
+                background-color: white;
                 transform-origin: center;
                 translate: 0 -50%;
                 

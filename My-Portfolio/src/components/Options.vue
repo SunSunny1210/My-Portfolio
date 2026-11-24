@@ -20,7 +20,9 @@ function onOptionClick() {
 <template>
     <div @transitionend="emit('is-done', true)" class="options-view flex-center-column" :class="{ shrink, open, isDone }">
         <div class="options flex-center-column">
+            <img id="up" src="../../src/assets/Flowers.png" alt="Flowers">
             <RouterLink @click="onOptionClick" class="option flex-center" v-for="route in routes" :to="route.path" :key="route.name">{{ route.name }}</RouterLink>
+            <img id="down" src="../../src/assets/Flowers.png" alt="Flowers">
         </div>
         <div @click="emit('close', false)" class="shadow"></div>
     </div>
@@ -33,31 +35,57 @@ function onOptionClick() {
     left: 0;
     height: 100svh;
     width: 100%;
-    background-color: white;
+    background-color: var(--main-pink);
     transition: width 0.4s ease-in-out, transform 0.4s ease-in-out, left 0.4s ease-in-out;
     z-index: 9;
     
     .options {
-        padding: 3vw;
+        padding: 2vw;
         height: 100%;
         width: 40%;
-        gap: 5vh;
+        gap: 2vh;
+        background-color: var(--main-pink);
         transition: width 0.4s ease-in-out;
-        z-index: 1;
+        z-index: 2;
+        
+        img {
+            width: 100%;
+            aspect-ratio: 4/1;
+    
+            &#down {
+                transform: scale(-1);
+            }
+        }
     
         .option {
+            position: relative;
             padding: 1vh;
             min-height: 0;
             width: 90%;
             text-decoration: none;
+            border: none;
             color: white;
-            background-color: var(--main-pink);
-            border: 1vh solid white;
-            box-shadow: 0 0 0 1vh var(--main-pink);
+            transition: background-color 0.3s ease-in-out;
             
-            &:hover {
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                height: 1px;
+                width: 50%;
+                background-color: white;
+                translate: -50%;
+                clip-path: inset(0 100% 0 0);
+                transition: clip-path 0.3s ease-in-out;
+            }
+
+            &:hover, &:focus {
                 background-color: var(--dark-pink);
-                box-shadow: 0 0 0 1vh var(--dark-pink);
+                
+                &::after {
+                    clip-path: inset(0 0 0 0);
+                }
             }
         }
     }
@@ -74,13 +102,20 @@ function onOptionClick() {
 @media (orientation: portrait) {
     .options-view {
         .options {
-            padding: 2rem;
+            padding: 4vw;
             width: 100%;
-            background-color: white;
 
             .option {
                 padding: 2vh 10vw;
                 white-space: nowrap;
+
+                &:focus {
+                    outline: none;
+                    
+                    &::after {
+                        clip-path: inset(0 100% 0 0);
+                    }
+                }
             }
         }
 
@@ -97,12 +132,6 @@ function onOptionClick() {
                 transition: opacity 0.5s ease-in-out, width 0.5s ease-in-out;
                 opacity: 0;
                 z-index: 0;
-            }
-        }
-
-        &.isDone {
-            .option {
-                font-size: calc(0.6rem + 0.5vw);
             }
         }
 
